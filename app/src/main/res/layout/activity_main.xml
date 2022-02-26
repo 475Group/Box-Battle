@@ -4,135 +4,254 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F3F3"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="401dp" />
+    <ProgressBar
+        android:id="@+id/progressBar37"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="271dp"
+        tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="401dp" />
+    <ProgressBar
+        android:id="@+id/progressBar38"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="538dp"
+        tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="401dp" />
+    <ProgressBar
+        android:id="@+id/progressBar39"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="538dp"
+        tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="488dp" />
+    <ProgressBar
+        android:id="@+id/progressBar40"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="538dp"
+        tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView24"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="488dp" />
+    <ProgressBar
+        android:id="@+id/progressBar20"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="256dp" />
 
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="488dp" />
+    <ProgressBar
+        android:id="@+id/progressBar15"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="593dp" />
 
-    <ImageView
-        android:id="@+id/imageView26"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="401dp" />
+    <ProgressBar
+        android:id="@+id/progressBar19"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="256dp" />
 
-    <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="488dp" />
+    <ProgressBar
+        android:id="@+id/progressBar16"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="527dp" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="236dp" />
+    <ProgressBar
+        android:id="@+id/progressBar17"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="593dp" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="236dp" />
+    <ProgressBar
+        android:id="@+id/progressBar18"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="593dp" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="323dp" />
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="326dp" />
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="323dp" />
+    <ProgressBar
+        android:id="@+id/progressBar6"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="527dp" />
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="323dp" />
+    <ProgressBar
+        android:id="@+id/progressBar7"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="527dp" />
 
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="323dp" />
+    <ProgressBar
+        android:id="@+id/progressBar8"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="458dp" />
 
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="236dp" />
+    <ProgressBar
+        android:id="@+id/progressBar9"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="458dp" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="236dp" />
+    <ProgressBar
+        android:id="@+id/progressBar10"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="458dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar11"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar30"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar12"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="458dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar13"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar14"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="256dp" />
 
     <TextView
         android:id="@+id/Player2ScoreID"
@@ -192,7 +311,7 @@
         android:backgroundTint="#C0CA33"
         android:text="Confirm"
         app:iconTint="#03FDD835"
-        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="778dp" />
 
     <TextView
@@ -218,56 +337,123 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="658dp" />
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="573dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView19"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="571dp" />
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="374dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView22"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="571dp" />
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="438dp" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="658dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="658dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="571dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="573dp" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -275,6 +461,401 @@
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="658dp" />
+        tools:layout_editor_absoluteY="573dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="58dp"
+        android:layout_height="8dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="403dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar21"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="403dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar22"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="403dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar23"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="340dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar24"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="340dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar25"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="535dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar32"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="472dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar33"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="403dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar34"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="472dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar35"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="472dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar36"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="472dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar31"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="264dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar26"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="340dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar27"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar28"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="271dp"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar29"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="6dp"
+        android:layout_height="55dp"
+        android:background="#201F1F"
+        android:progressBackgroundTint="#100101"
+        android:progressTint="#191818"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="271dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="573dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="531dp" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="401dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="261dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
