@@ -8,6 +8,77 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/Box1"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageView
+        android:id="@+id/Box2"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageView
+        android:id="@+id/Box3"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <ImageView
+        android:id="@+id/Box4"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <ImageView
+        android:id="@+id/Box5"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <ImageView
+        android:id="@+id/Box6"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <ImageView
+        android:id="@+id/Box7"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <ImageView
+        android:id="@+id/Box8"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <ImageView
+        android:id="@+id/Box9"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="477dp" />
 
     <TextView
         android:id="@+id/Title"
@@ -669,6 +740,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/info_button_foreground" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
