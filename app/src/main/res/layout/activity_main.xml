@@ -12,73 +12,123 @@
         android:id="@+id/Box1"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/line4"
+        app:layout_constraintEnd_toStartOf="@+id/line14"
+        app:layout_constraintStart_toEndOf="@+id/line13"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box2"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/line5"
+        app:layout_constraintEnd_toStartOf="@+id/line15"
+        app:layout_constraintStart_toEndOf="@+id/line14"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box3"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/line6"
+        app:layout_constraintEnd_toStartOf="@+id/line16"
+        app:layout_constraintTop_toBottomOf="@+id/line3"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box4"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/line7"
+        app:layout_constraintEnd_toStartOf="@+id/line18"
+        app:layout_constraintStart_toEndOf="@+id/line17"
+        app:layout_constraintTop_toBottomOf="@+id/line4"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box5"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/line8"
+        app:layout_constraintEnd_toStartOf="@+id/line19"
+        app:layout_constraintStart_toEndOf="@+id/line18"
+        app:layout_constraintTop_toBottomOf="@+id/line5"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box6"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="259dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/circle10"
+        app:layout_constraintEnd_toStartOf="@+id/line20"
+        app:layout_constraintStart_toEndOf="@+id/line19"
+        app:layout_constraintTop_toBottomOf="@+id/circle6"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box7"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/line10"
+        app:layout_constraintEnd_toStartOf="@+id/line22"
+        app:layout_constraintStart_toEndOf="@+id/line21"
+        app:layout_constraintTop_toBottomOf="@+id/line7"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box8"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/line11"
+        app:layout_constraintEnd_toStartOf="@+id/line23"
+        app:layout_constraintStart_toEndOf="@+id/line22"
+        app:layout_constraintTop_toBottomOf="@+id/line8"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/Box9"
         android:layout_width="46dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/line12"
+        app:layout_constraintEnd_toStartOf="@+id/line24"
+        app:layout_constraintStart_toEndOf="@+id/line23"
+        app:layout_constraintTop_toBottomOf="@+id/line9"
+        app:srcCompat="@drawable/line" />
 
     <TextView
         android:id="@+id/Title"

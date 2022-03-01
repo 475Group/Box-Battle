@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -82,9 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         player1Turn.setVisibility(View.VISIBLE);
                     }
                     previousLine.setClickable(false);
-                    checkWin(previousLine, turn);
-                    previousLine = null;
+                    checkWin(previousLine);
                     turn++;
+                    previousLine = null;
+
                 }
             }
         });
@@ -94,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                 alertDialog.setTitle("Are you sure you want to quit?");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                clearBoard();
+                                openStartScreen();
                             }
                         });
                 alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
@@ -106,9 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 dialog.dismiss();
                             }
                         });
+
                 alertDialog.show();
-
-
             }
         });
         Button restartButton = (Button) findViewById(R.id.restartButton);
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                 alertDialog.setTitle("Are you sure you want to restart?");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 clearBoard();
@@ -129,14 +130,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 dialog.dismiss();
                             }
                         });
-                alertDialog.show();
 
+                alertDialog.show();
             }
         });
     }
 
     @Override
     public void onClick(View view) {
+        System.out.println(turn);
         if (previousLine == null) {
             if (turn %2 == 0) {
                 view.setVisibility(View.VISIBLE);
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @SuppressLint("SetTextI18n")
-    public void checkWin(View line, int turn){
+    public void checkWin(View line){
         lines.add(line);
         Resources r = getResources();
         String name = getPackageName();
@@ -172,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int thirdCondition;
         int fourthCondition;
         int k = 0;
+        int p1OldScore = player1ScoreValue;
+        int p2OldScore = player2ScoreValue;
         for (int i = 1; i <= 9; i++){
             firstCondition = i;
             secondCondition = i+3;
@@ -184,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 thirdCondition = i+12 + k;
                 fourthCondition = i + 12+1 + k;
             }
-            System.out.println(firstCondition + " " + secondCondition + " " + thirdCondition + " " + fourthCondition);
             if (lines.contains(findViewById(r.getIdentifier("line" + firstCondition, "id", name))) &&
                     lines.contains(findViewById(r.getIdentifier("line" + secondCondition, "id", name)))&&
                     lines.contains(findViewById(r.getIdentifier("line" + thirdCondition, "id", name)))&&
@@ -228,5 +231,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setBackgroundColor(findViewById(R.id.GamePage4x4).getSolidColor());
             line.setOnClickListener(this);
         }
+        for (int i = 1; i < 10; i++) {
+            ImageView box = (ImageView) findViewById(r.getIdentifier("Box" + i, "id", name));
+            box.setVisibility(View.INVISIBLE);
+        }
+    }
+    public void openStartScreen(){
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
     }
 }
