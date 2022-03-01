@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View previousLine = null;
     int turn = 0;
     ArrayList<View> lines = new ArrayList<>();
+    ArrayList<View> boxes = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -196,9 +197,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (turn % 2 == 0) {
                         player1ScoreValue++;
                         player1Score.setText("Score: " + player1ScoreValue);
+                        //Color in box that's under firstCondition ------------------------------
                     } else {
                         player2ScoreValue++;
                         player2Score.setText("Score: " + player2ScoreValue);
+                        //Color in box that's under firstCondition ------------------------------
                     }
                 }
             }
@@ -213,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         turn = 0;
         previousLine = null;
         lines.clear();
+        boxes.clear();
         player1ScoreValue = 0;
         player2ScoreValue = 0;
         player1Score.setText("Score: " + player1ScoreValue);
