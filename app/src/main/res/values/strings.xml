@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="box_battle">BOX BATTLE</string>
+    <string name="start">Start</string>
 </resources>
