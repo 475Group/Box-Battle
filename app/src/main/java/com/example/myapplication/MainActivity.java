@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int turn = 0;
     ArrayList<View> lines = new ArrayList<>();
     ArrayList<View> boxes = new ArrayList<>();
+    int numOfLines;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 alertDialog.show();
             }
         });
+
 
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,8 +86,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     previousLine.setClickable(false);
                     checkWin(previousLine);
-                    turn++;
-                    previousLine = null;
+                    if (player2ScoreValue + player1ScoreValue == 9)
+                    {
+                        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                        if (player1ScoreValue > player2ScoreValue) {
+                            alertDialog.setTitle(player1Text.getText() + " Wins!");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            openStartScreen();
+                                        }
+                                    });
+                        }
+                        if (player1ScoreValue < player2ScoreValue) {
+                            alertDialog.setTitle(player2Text.getText() + " Wins!");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            openStartScreen();
+                                        }
+                                    });
+                        }
+                        alertDialog.show();
+                    }
+                    else {
+                        turn++;
+                        previousLine = null;
+                    }
 
                 }
             }
@@ -214,6 +253,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @SuppressLint("SetTextI18n")
     public void clearBoard(){
+        numOfLines = 0;
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
         turn = 0;
@@ -230,6 +270,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             View line = (View) findViewById(r.getIdentifier("line" + i, "id", name));
             line.setBackgroundColor(findViewById(R.id.GamePage4x4).getSolidColor());
             line.setOnClickListener(this);
+            numOfLines++;
         }
         for (int i = 1; i < 10; i++) {
             ImageView box = (ImageView) findViewById(r.getIdentifier("Box" + i, "id", name));
