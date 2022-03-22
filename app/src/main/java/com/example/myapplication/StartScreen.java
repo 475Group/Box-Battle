@@ -21,6 +21,7 @@ public class StartScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openMainActivity();
+                finish();
 
             }
         });
