@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game_page);
         player1Text = (TextView) findViewById(R.id.player1Text);
         player2Text = (TextView) findViewById(R.id.player2Text);
         player1Score = (TextView) findViewById(R.id.player1Score);
@@ -272,10 +272,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setOnClickListener(this);
             numOfLines++;
         }
-        for (int i = 1; i < 10; i++) {
+        /*for (int i = 1; i < 10; i++) {
             ImageView box = (ImageView) findViewById(r.getIdentifier("Box" + i, "id", name));
             box.setVisibility(View.INVISIBLE);
-        }
+        }*/
     }
     public void openStartScreen(){
         Intent intent = new Intent(this, StartScreen.class);
