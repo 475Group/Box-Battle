@@ -2,14 +2,17 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,8 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View previousLine = null;
     int turn = 0;
     ArrayList<View> lines = new ArrayList<>();
-    ArrayList<View> boxes = new ArrayList<>();
+    //ArrayList<View> boxes = new ArrayList<>();
     int numOfLines;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,17 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(previousLine != null) {
-                    if (turn %2 == 0) {
-                        player1Turn.setVisibility(View.INVISIBLE);
-                        player2Turn.setVisibility(View.VISIBLE);
-                    }
-                    if (turn %2 != 0) {
-                        player2Turn.setVisibility(View.INVISIBLE);
-                        player1Turn.setVisibility(View.VISIBLE);
-                    }
                     previousLine.setClickable(false);
-                    checkWin(previousLine);
-                    if (player2ScoreValue + player1ScoreValue == 9)
+                    boolean stillLastPlayerTurn = checkWin(previousLine);
+                    int boardSize = 6;
+                    if (player2ScoreValue + player1ScoreValue == boardSize)
                     {
                         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                         if (player1ScoreValue > player2ScoreValue) {
@@ -122,10 +119,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         alertDialog.show();
                     }
                     else {
-                        turn++;
-                        previousLine = null;
+                        if(stillLastPlayerTurn) {
+                            previousLine = null;
+                        }
+                        else {
+                            if (turn %2 == 0 ) {
+                                player1Turn.setVisibility(View.INVISIBLE);
+                                player2Turn.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                player2Turn.setVisibility(View.INVISIBLE);
+                                player1Turn.setVisibility(View.VISIBLE);
+                            }
+                            turn++;
+                            previousLine = null;
+                        }
                     }
-
                 }
             }
         });
@@ -177,26 +186,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        System.out.println(turn);
         if (previousLine == null) {
+            ViewGroup.LayoutParams params = view.getLayoutParams();
+            if (params.width == 130)
+                params.width = 20;
+            else
+                params.height = 20;
+            view.setLayoutParams(params);
+
             if (turn %2 == 0) {
-                view.setVisibility(View.VISIBLE);
-                view.setBackgroundColor(player1Text.getCurrentTextColor());
+                //view.setVisibility(View.VISIBLE);
+                //view.setBackgroundColor(player1Text.getCurrentTextColor());
+
+                view.setBackgroundColor(Color.BLACK);
+
             }
             if (turn %2 != 0) {
-                view.setVisibility(View.VISIBLE);
-                view.setBackgroundColor(player2Text.getCurrentTextColor());
+                //view.setVisibility(View.VISIBLE);
+                //view.setBackgroundColor(player2Text.getCurrentTextColor());
+                view.setBackgroundColor(Color.BLACK);
             }
         }
         if (previousLine != null){
-            previousLine.setBackgroundColor(findViewById(R.id.GamePage4x4).getSolidColor());
+            previousLine.setBackgroundColor(findViewById(R.id.square).getSolidColor());
+            ViewGroup.LayoutParams params = previousLine.getLayoutParams();
+            if (params.width == 20)
+                params.width = 130;
+            else
+                params.height = 130;
+            previousLine.setLayoutParams(params);
+
+            ViewGroup.LayoutParams params0 = view.getLayoutParams();
+            if (params0.width == 130)
+                params0.width = 20;
+            else
+                params0.height = 20;
+            view.setLayoutParams(params0);
             if (turn %2 == 0) {
-                view.setVisibility(View.VISIBLE);
-                view.setBackgroundColor(player1Text.getCurrentTextColor());
+                //view.setVisibility(View.VISIBLE);
+                //view.setBackgroundColor(player1Text.getCurrentTextColor());
+                view.setBackgroundColor(Color.BLACK);
             }
             if (turn %2 != 0) {
-                view.setVisibility(View.VISIBLE);
-                view.setBackgroundColor(player2Text.getCurrentTextColor());
+                //view.setVisibility(View.VISIBLE);
+                //view.setBackgroundColor(player2Text.getCurrentTextColor());
+                view.setBackgroundColor(Color.BLACK);
             }
         }
 
@@ -204,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @SuppressLint("SetTextI18n")
-    public void checkWin(View line){
+    public boolean checkWin(View line){
         lines.add(line);
         Resources r = getResources();
         String name = getPackageName();
@@ -213,43 +247,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int thirdCondition;
         int fourthCondition;
         int k = 0;
-        int p1OldScore = player1ScoreValue;
-        int p2OldScore = player2ScoreValue;
-        for (int i = 1; i <= 9; i++){
+        //int p1OldScore = player1ScoreValue;
+        //int p2OldScore = player2ScoreValue;
+        int lastLineInRowsNMin1 = 6;
+        int numOfRows = 3;
+        int numOfRowLines = 9;
+        String graphType = "_2x3";
+        for (int i = 1; i <= lastLineInRowsNMin1; i++){
             firstCondition = i;
-            secondCondition = i+3;
-            if (i-1 != 0 && (i-1)%3 == 0) {
-                thirdCondition = i + 12 + 1 + k;
-                fourthCondition = i + 12 + 2 + k;
+            secondCondition = i+numOfRows;
+            if (i-1 != 0 && (i-1)%numOfRows == 0) {
+                thirdCondition = i + numOfRowLines + 1 + k;
+                fourthCondition = i + numOfRowLines + 2 + k;
                 k++;
             }
             else {
-                thirdCondition = i+12 + k;
-                fourthCondition = i + 12+1 + k;
+                thirdCondition = i+numOfRowLines + k;
+                fourthCondition = i + numOfRowLines+1 + k;
             }
-            if (lines.contains(findViewById(r.getIdentifier("line" + firstCondition, "id", name))) &&
-                    lines.contains(findViewById(r.getIdentifier("line" + secondCondition, "id", name)))&&
-                    lines.contains(findViewById(r.getIdentifier("line" + thirdCondition, "id", name)))&&
-                    lines.contains(findViewById(r.getIdentifier("line" + fourthCondition, "id", name)))){
-                if(line.equals(findViewById(r.getIdentifier("line" + firstCondition, "id", name))) ||
-                    line.equals(findViewById(r.getIdentifier("line" + secondCondition, "id", name))) ||
-                        line.equals(findViewById(r.getIdentifier("line" + thirdCondition, "id", name)))||
-                            line.equals(findViewById(r.getIdentifier("line" + fourthCondition, "id", name)))){
+            if (lines.contains(findViewById(r.getIdentifier("line" + firstCondition + graphType, "id", name))) &&
+                    lines.contains(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name)))&&
+                    lines.contains(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))&&
+                    lines.contains(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
+                if(line.equals(findViewById(r.getIdentifier("line" + firstCondition + graphType, "id", name))) ||
+                    line.equals(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name))) ||
+                        line.equals(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))||
+                            line.equals(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
 
                     if (turn % 2 == 0) {
                         player1ScoreValue++;
                         player1Score.setText("Score: " + player1ScoreValue);
+                        return true;
                         //Color in box that's under firstCondition ------------------------------
                     } else {
                         player2ScoreValue++;
                         player2Score.setText("Score: " + player2ScoreValue);
+                        return true;
                         //Color in box that's under firstCondition ------------------------------
                     }
+
                 }
             }
 
 
         }
+        return false;
     }
     @SuppressLint("SetTextI18n")
     public void clearBoard(){
@@ -259,16 +301,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         turn = 0;
         previousLine = null;
         lines.clear();
-        boxes.clear();
+        //boxes.clear();
         player1ScoreValue = 0;
         player2ScoreValue = 0;
         player1Score.setText("Score: " + player1ScoreValue);
         player2Score.setText("Score: " + player2ScoreValue);
         Resources r = getResources();
         String name = getPackageName();
-        for (int i = 1; i < 25; i++) {
-            View line = (View) findViewById(r.getIdentifier("line" + i, "id", name));
-            line.setBackgroundColor(findViewById(R.id.GamePage4x4).getSolidColor());
+        int l = 17;
+        for (int i = 1; i <= l; i++) {
+            View line = (View) findViewById(r.getIdentifier("line" + i + "_2x3", "id", name));
+            ViewGroup.LayoutParams params = line.getLayoutParams();
+            if (params.height < params.width)
+                params.height = 130;
+            else
+                params.width = 130;
+            line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
+            line.setLayoutParams(params);
             line.setOnClickListener(this);
             numOfLines++;
         }

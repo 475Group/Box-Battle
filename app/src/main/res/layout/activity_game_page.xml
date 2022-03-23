@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GamePage2x3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -347,7 +348,7 @@
         app:srcCompat="@drawable/circle" />
 
     <View
-        android:id="@+id/line0_2x3"
+        android:id="@+id/line1_2x3"
         android:layout_width="87dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -358,10 +359,11 @@
         app:layout_constraintEnd_toStartOf="@+id/dot1"
         app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toEndOf="@+id/dot0"
-        app:layout_constraintTop_toTopOf="@+id/square" />
+        app:layout_constraintTop_toTopOf="@+id/square"
+        />
 
     <View
-        android:id="@+id/line1_2x3"
+        android:id="@+id/line2_2x3"
         android:layout_width="87dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -376,7 +378,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <View
-        android:id="@+id/line2_2x3"
+        android:id="@+id/line3_2x3"
         android:layout_width="95dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -388,7 +390,7 @@
         app:layout_constraintVertical_bias="0.134" />
 
     <View
-        android:id="@+id/line3_2x3"
+        android:id="@+id/line4_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -400,7 +402,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line4_2x3"
+        android:id="@+id/line5_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -412,7 +414,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line5_2x3"
+        android:id="@+id/line6_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -424,7 +426,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line6_2x3"
+        android:id="@+id/line7_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -436,7 +438,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line7_2x3"
+        android:id="@+id/line8_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -448,7 +450,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line8_2x3"
+        android:id="@+id/line9_2x3"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -460,7 +462,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line9_2x3"
+        android:id="@+id/line10_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -473,7 +475,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <View
-        android:id="@+id/line10_2x3"
+        android:id="@+id/line11_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -486,7 +488,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <View
-        android:id="@+id/line11_2x3"
+        android:id="@+id/line12_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -499,7 +501,7 @@
         app:layout_constraintVertical_bias="0.8"/>
 
     <View
-        android:id="@+id/line12_2x3"
+        android:id="@+id/line13_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -512,7 +514,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <View
-        android:id="@+id/line13_2x3"
+        android:id="@+id/line14_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -525,7 +527,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line14_2x3"
+        android:id="@+id/line15_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -538,7 +540,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line15_2x3"
+        android:id="@+id/line16_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -551,7 +553,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line16_2x3"
+        android:id="@+id/line17_2x3"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
