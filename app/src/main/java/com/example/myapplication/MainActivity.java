@@ -2,10 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -25,162 +23,103 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View previousLine = null;
     int turn = 0;
     ArrayList<View> lines = new ArrayList<>();
-    //ArrayList<View> boxes = new ArrayList<>();
+    ArrayList<TextView> wins = new ArrayList<>();
     int numOfLines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_page);
-        player1Text = (TextView) findViewById(R.id.player1Text);
-        player2Text = (TextView) findViewById(R.id.player2Text);
-        player1Score = (TextView) findViewById(R.id.player1Score);
-        player2Score = (TextView) findViewById(R.id.player2Score);
-        player1Turn = (TextView) findViewById(R.id.Player1Turn);
-        player2Turn = (TextView) findViewById(R.id.Player2Turn);
-        ImageView settingsButton = (ImageView) findViewById(R.id.settingsIcon);
-        ImageView infoButton = (ImageView) findViewById(R.id.infoIcon);
+        player1Text = findViewById(R.id.player1Text);
+        player2Text = findViewById(R.id.player2Text);
+        player1Score = findViewById(R.id.player1Score);
+        player2Score = findViewById(R.id.player2Score);
+        player1Turn = findViewById(R.id.Player1Turn);
+        player2Turn = findViewById(R.id.Player2Turn);
+        ImageView settingsButton = findViewById(R.id.settingsIcon);
+        ImageView infoButton = findViewById(R.id.infoIcon);
 
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle("Settings");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+        settingsButton.setOnClickListener(view -> {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Settings");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    (dialog, which) -> dialog.dismiss());
 
-                alertDialog.show();
-            }
+            alertDialog.show();
         });
 
 
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle("Info");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+        infoButton.setOnClickListener(view -> {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Info");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    (dialog, which) -> dialog.dismiss());
 
-                alertDialog.show();
-            }
+            alertDialog.show();
         });
         clearBoard();
-        Button confirmButton = (Button) findViewById(R.id.confirmButton);
-        confirmButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View view) {
-                if(previousLine != null) {
-                    previousLine.setClickable(false);
-                    boolean stillLastPlayerTurn = checkWin(previousLine);
-                    int boardSize = 6;
-                    if (player2ScoreValue + player1ScoreValue == boardSize)
-                    {
-                        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                        if (player1ScoreValue > player2ScoreValue) {
-                            alertDialog.setTitle(player1Text.getText() + " Wins!");
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    });
-                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            openStartScreen();
-                                        }
-                                    });
-                        }
-                        if (player1ScoreValue < player2ScoreValue) {
-                            alertDialog.setTitle(player2Text.getText() + " Wins!");
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    });
-                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            openStartScreen();
-                                        }
-                                    });
-                        }
-                        alertDialog.show();
+        Button confirmButton = findViewById(R.id.confirmButton);
+        confirmButton.setOnClickListener(view -> {
+            if(previousLine != null) {
+                previousLine.setClickable(false);
+                boolean stillLastPlayerTurn = checkWin(previousLine);
+                int boardSize = 6;
+                if (player2ScoreValue + player1ScoreValue == boardSize)
+                {
+                    AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                    if (player1ScoreValue > player2ScoreValue) {
+                        alertDialog.setTitle(player1Text.getText() + " Wins!");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                                (dialog, which) -> dialog.dismiss());
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                                (dialog, which) -> openStartScreen());
                     }
-                    else {
-                        if(stillLastPlayerTurn) {
-                            previousLine = null;
+                    if (player1ScoreValue < player2ScoreValue) {
+                        alertDialog.setTitle(player2Text.getText() + " Wins!");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                                (dialog, which) -> dialog.dismiss());
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                                (dialog, which) -> openStartScreen());
+                    }
+                    alertDialog.show();
+                }
+                else {
+                    if(!stillLastPlayerTurn){
+                        if (turn %2 == 0 ) {
+                            player1Turn.setVisibility(View.INVISIBLE);
+                            player2Turn.setVisibility(View.VISIBLE);
                         }
                         else {
-                            if (turn %2 == 0 ) {
-                                player1Turn.setVisibility(View.INVISIBLE);
-                                player2Turn.setVisibility(View.VISIBLE);
-                            }
-                            else {
-                                player2Turn.setVisibility(View.INVISIBLE);
-                                player1Turn.setVisibility(View.VISIBLE);
-                            }
-                            turn++;
-                            previousLine = null;
+                            player2Turn.setVisibility(View.INVISIBLE);
+                            player1Turn.setVisibility(View.VISIBLE);
                         }
+                        turn++;
                     }
+                    previousLine = null;
                 }
             }
         });
-        Button quitButton = (Button) findViewById(R.id.quitButton);
-        quitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle("Are you sure you want to quit?");
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                openStartScreen();
-                            }
-                        });
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+        Button quitButton = findViewById(R.id.quitButton);
+        quitButton.setOnClickListener(view -> {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Are you sure you want to quit?");
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
+                    (dialog, which) -> openStartScreen());
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
+                    (dialog, which) -> dialog.dismiss());
 
-                alertDialog.show();
-            }
+            alertDialog.show();
         });
-        Button restartButton = (Button) findViewById(R.id.restartButton);
-        restartButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle("Are you sure you want to restart?");
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                clearBoard();
-                            }
-                        });
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+        Button restartButton = findViewById(R.id.restartButton);
+        restartButton.setOnClickListener(view -> {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Are you sure you want to restart?");
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
+                    (dialog, which) -> clearBoard());
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL",
+                    (dialog, which) -> dialog.dismiss());
 
-                alertDialog.show();
-            }
+            alertDialog.show();
         });
     }
 
@@ -195,15 +134,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             view.setLayoutParams(params);
 
             if (turn %2 == 0) {
-                //view.setVisibility(View.VISIBLE);
-                //view.setBackgroundColor(player1Text.getCurrentTextColor());
-
                 view.setBackgroundColor(Color.BLACK);
 
             }
             if (turn %2 != 0) {
-                //view.setVisibility(View.VISIBLE);
-                //view.setBackgroundColor(player2Text.getCurrentTextColor());
                 view.setBackgroundColor(Color.BLACK);
             }
         }
@@ -223,13 +157,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params0.height = 20;
             view.setLayoutParams(params0);
             if (turn %2 == 0) {
-                //view.setVisibility(View.VISIBLE);
-                //view.setBackgroundColor(player1Text.getCurrentTextColor());
                 view.setBackgroundColor(Color.BLACK);
             }
             if (turn %2 != 0) {
-                //view.setVisibility(View.VISIBLE);
-                //view.setBackgroundColor(player2Text.getCurrentTextColor());
                 view.setBackgroundColor(Color.BLACK);
             }
         }
@@ -242,13 +172,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lines.add(line);
         Resources r = getResources();
         String name = getPackageName();
+        boolean thereWasAWinner = false;
         int firstCondition;
         int secondCondition;
         int thirdCondition;
         int fourthCondition;
         int k = 0;
-        //int p1OldScore = player1ScoreValue;
-        //int p2OldScore = player2ScoreValue;
         int lastLineInRowsNMin1 = 6;
         int numOfRows = 3;
         int numOfRowLines = 9;
@@ -277,21 +206,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (turn % 2 == 0) {
                         player1ScoreValue++;
                         player1Score.setText("Score: " + player1ScoreValue);
-                        return true;
-                        //Color in box that's under firstCondition ------------------------------
+                        wins.get(i-1).setTextColor(player1Text.getCurrentTextColor());
                     } else {
                         player2ScoreValue++;
                         player2Score.setText("Score: " + player2ScoreValue);
-                        return true;
-                        //Color in box that's under firstCondition ------------------------------
+                        wins.get(i-1).setTextColor(player2Text.getCurrentTextColor());
                     }
+
+                    thereWasAWinner = true;
 
                 }
             }
 
 
         }
-        return false;
+        return thereWasAWinner;
     }
     @SuppressLint("SetTextI18n")
     public void clearBoard(){
@@ -301,7 +230,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         turn = 0;
         previousLine = null;
         lines.clear();
-        //boxes.clear();
         player1ScoreValue = 0;
         player2ScoreValue = 0;
         player1Score.setText("Score: " + player1ScoreValue);
@@ -309,8 +237,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Resources r = getResources();
         String name = getPackageName();
         int l = 17;
+        int numOfWins = 6;
         for (int i = 1; i <= l; i++) {
-            View line = (View) findViewById(r.getIdentifier("line" + i + "_2x3", "id", name));
+            View line = findViewById(r.getIdentifier("line" + i + "_2x3", "id", name));
             ViewGroup.LayoutParams params = line.getLayoutParams();
             if (params.height < params.width)
                 params.height = 130;
@@ -321,10 +250,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setOnClickListener(this);
             numOfLines++;
         }
-        /*for (int i = 1; i < 10; i++) {
-            ImageView box = (ImageView) findViewById(r.getIdentifier("Box" + i, "id", name));
-            box.setVisibility(View.INVISIBLE);
-        }*/
+        for (int i = 1; i <= numOfWins; i++)
+        {
+            TextView x = findViewById(r.getIdentifier("win"+i+"_2x3", "id", name));
+            x.setBackgroundColor(findViewById(R.id.square).getSolidColor());
+            wins.add(x);
+        }
     }
     public void openStartScreen(){
         Intent intent = new Intent(this, StartScreen.class);

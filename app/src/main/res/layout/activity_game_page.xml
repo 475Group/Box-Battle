@@ -565,5 +565,97 @@
         app:layout_constraintTop_toBottomOf="@+id/dot7"
         app:layout_constraintVertical_bias="0.7" />
 
+    <TextView
+        android:id="@+id/win1_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/win3_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/win2_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="151dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/win4_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.876" />
+
+    <TextView
+        android:id="@+id/win5_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.876" />
+
+    <TextView
+        android:id="@+id/win6_2x3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:fontFamily="@font/permanent_marker"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/square"
+        app:layout_constraintEnd_toEndOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="@+id/square"
+        app:layout_constraintTop_toTopOf="@+id/square"
+        app:layout_constraintVertical_bias="0.876" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
