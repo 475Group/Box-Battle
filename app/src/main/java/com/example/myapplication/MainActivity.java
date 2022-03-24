@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<View> lines = new ArrayList<>();
     ArrayList<TextView> wins = new ArrayList<>();
     int numOfLines;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 (dialog, which) -> openStartScreen());
                     }
                     alertDialog.show();
+                    previousLine = null;
                 }
                 else {
                     if(!stillLastPlayerTurn){
@@ -230,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         turn = 0;
         previousLine = null;
         lines.clear();
+        wins.clear();
         player1ScoreValue = 0;
         player2ScoreValue = 0;
         player1Score.setText("Score: " + player1ScoreValue);
@@ -253,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 1; i <= numOfWins; i++)
         {
             TextView x = findViewById(r.getIdentifier("win"+i+"_2x3", "id", name));
-            x.setBackgroundColor(findViewById(R.id.square).getSolidColor());
+            x.setTextColor(findViewById(R.id.square).getSolidColor());
             wins.add(x);
         }
     }
