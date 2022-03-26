@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     public void openStartScreen(){
-        Intent intent = new Intent(this, StartScreen.class);
+        Intent intent = new Intent(this, StartScreenActivity.class);
         startActivity(intent);
     }
 }

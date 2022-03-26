@@ -13,7 +13,7 @@
             android:name=".GamePage"
             android:exported="false" />
         <activity
-            android:name=".StartScreen"
+            android:name=".StartScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
