@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class StartScreen extends AppCompatActivity {
+public class StartScreenActivity extends AppCompatActivity {
      Button button;
 
 
