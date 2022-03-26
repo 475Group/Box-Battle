@@ -11,6 +11,8 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<View> lines = new ArrayList<>();
     ArrayList<TextView> wins = new ArrayList<>();
     int numOfLines;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +41,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
 
-        settingsButton.setOnClickListener(view -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Settings");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    (dialog, which) -> dialog.dismiss());
 
-            alertDialog.show();
-        });
+        //adding on click listener for settings button
+         settingsButton.setOnClickListener(view -> {
+             //opens a new intent to open the settings activity.
+             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+             startActivity(i);
+         });
 
 
         infoButton.setOnClickListener(view -> {
