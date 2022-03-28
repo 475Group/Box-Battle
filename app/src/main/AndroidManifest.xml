@@ -15,9 +15,6 @@
             android:exported="false"
             android:label="Settings" />
         <activity
-            android:name=".GamePage"
-            android:exported="false" />
-        <activity
             android:name=".StartScreenActivity"
             android:exported="true">
             <intent-filter>
