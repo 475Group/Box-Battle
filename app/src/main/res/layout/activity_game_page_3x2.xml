@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/GamePage2x3"
+    android:id="@+id/GamePage3x2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".GamePage">
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -348,7 +348,7 @@
         app:srcCompat="@drawable/circle" />
 
     <View
-        android:id="@+id/line1_2x3"
+        android:id="@+id/line1_3x2"
         android:layout_width="87dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -363,7 +363,7 @@
         />
 
     <View
-        android:id="@+id/line2_2x3"
+        android:id="@+id/line2_3x2"
         android:layout_width="87dp"
         android:layout_height="5dp"
         android:layout_marginStart="16dp"
@@ -378,7 +378,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <View
-        android:id="@+id/line3_2x3"
+        android:id="@+id/line3_3x2"
         android:layout_width="95dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -390,7 +390,7 @@
         app:layout_constraintVertical_bias="0.134" />
 
     <View
-        android:id="@+id/line4_2x3"
+        android:id="@+id/line4_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -402,7 +402,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line5_2x3"
+        android:id="@+id/line5_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -414,7 +414,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line6_2x3"
+        android:id="@+id/line6_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -426,7 +426,7 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <View
-        android:id="@+id/line7_2x3"
+        android:id="@+id/line7_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -438,7 +438,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line8_2x3"
+        android:id="@+id/line8_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -450,7 +450,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line9_2x3"
+        android:id="@+id/line9_3x2"
         android:layout_width="90dp"
         android:layout_height="5dp"
         android:background="@color/black"
@@ -462,7 +462,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <View
-        android:id="@+id/line10_2x3"
+        android:id="@+id/line10_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -475,7 +475,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <View
-        android:id="@+id/line11_2x3"
+        android:id="@+id/line11_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -488,7 +488,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <View
-        android:id="@+id/line12_2x3"
+        android:id="@+id/line12_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -501,7 +501,7 @@
         app:layout_constraintVertical_bias="0.8"/>
 
     <View
-        android:id="@+id/line13_2x3"
+        android:id="@+id/line13_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -514,7 +514,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <View
-        android:id="@+id/line14_2x3"
+        android:id="@+id/line14_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -527,7 +527,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line15_2x3"
+        android:id="@+id/line15_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -540,7 +540,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line16_2x3"
+        android:id="@+id/line16_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -553,7 +553,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <View
-        android:id="@+id/line17_2x3"
+        android:id="@+id/line17_3x2"
         android:layout_width="5dp"
         android:layout_height="90dp"
 
@@ -566,7 +566,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <TextView
-        android:id="@+id/win1_2x3"
+        android:id="@+id/win1_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:fontFamily="@font/permanent_marker"
@@ -581,7 +581,7 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/win3_2x3"
+        android:id="@+id/win3_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:fontFamily="@font/permanent_marker"
@@ -596,7 +596,7 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/win2_2x3"
+        android:id="@+id/win2_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:layout_marginStart="148dp"
@@ -613,7 +613,7 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/win4_2x3"
+        android:id="@+id/win4_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:fontFamily="@font/permanent_marker"
@@ -628,7 +628,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
-        android:id="@+id/win5_2x3"
+        android:id="@+id/win5_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:fontFamily="@font/permanent_marker"
@@ -643,7 +643,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <TextView
-        android:id="@+id/win6_2x3"
+        android:id="@+id/win6_3x2"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:fontFamily="@font/permanent_marker"

@@ -30,13 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<View> lines = new ArrayList<>();
     //stores all possible wins in game
     ArrayList<TextView> wins = new ArrayList<>();
-    //number of lines in game
-    int numOfLines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_page);
+        setContentView(R.layout.activity_game_page_3x2);
         //get views(these should be in their own class)
         player1Text = findViewById(R.id.player1Text);
         player2Text = findViewById(R.id.player2Text);
@@ -268,7 +266,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("SetTextI18n")
     //erases all data on board
     public void clearBoard(){
-        numOfLines = 0;
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
         turn = 0;
@@ -293,7 +290,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
             line.setLayoutParams(params);
             line.setOnClickListener(this);
-            numOfLines++;
         }
         for (int i = 1; i <= numOfWins; i++)
         {
