@@ -12,10 +12,13 @@
         <entry key="app/src/main/res/drawable/settings_button_background.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_game_page.xml" value="0.1005141943036722" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18861602783203124" />
-        <entry key="app/src/main/res/layout/activity_setup_screen.xml" value="0.209249267578125" />
+        <entry key="app/src/main/res/layout/activity_setup_screen.xml" value="0.30098898343950786" />
         <entry key="app/src/main/res/layout/activity_start_screen.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/heart_icon.xml" value="0.132" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/heart_icon_round.xml" value="0.132" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1835" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/x.xml" value="0.1835" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/x_round.xml" value="0.1835" />
       </map>
     </option>
   </component>

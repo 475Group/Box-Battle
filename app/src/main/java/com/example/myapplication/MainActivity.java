@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
     String player1Name, player2Name;
+    int player1Color, player2Color;
+
     int player1ScoreValue = 0, player2ScoreValue = 0;
     View previousLine = null;
     int turn = 0;
@@ -32,10 +34,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void setUpPlayerInfo(){
         if (!(player1Name.equals(""))) {
             player1Text.setText(player1Name);
+
         }
+        player1Text.setTextColor(player1Color);
+        player1Score.setTextColor(player1Color);
+
         if (!(player2Name.equals(""))) {
             player2Text.setText(player2Name);
         }
+        player2Text.setTextColor(player2Color);
+        player2Score.setTextColor(player2Color);
+
     }
 
     @Override
@@ -50,16 +59,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             getSupportActionBar().hide();
         }
 
+
         setContentView(R.layout.activity_game_page);
         player1Text = findViewById(R.id.player1Text);
         player1Name = getIntent().getExtras().getString("P1");
+        player1Color = getIntent().getIntExtra("colorP1", -16777216);
         player2Text = findViewById(R.id.player2Text);
         player2Name = getIntent().getExtras().getString("P2");
-        setUpPlayerInfo();
+        player2Color = getIntent().getIntExtra("colorP2", -16777216);
         player1Score = findViewById(R.id.player1Score);
         player2Score = findViewById(R.id.player2Score);
         player1Turn = findViewById(R.id.Player1Turn);
         player2Turn = findViewById(R.id.Player2Turn);
+        setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
 
