@@ -48,14 +48,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-        infoButton.setOnClickListener(view -> {
+        /*infoButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             alertDialog.setTitle("Info");
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                     (dialog, which) -> dialog.dismiss());
 
             alertDialog.show();
+        });*/
+
+        //Open info page
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInfoActivity();
+                finish();
+            }
         });
+
         clearBoard();
         Button confirmButton = findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(view -> {
@@ -260,6 +270,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void openStartScreen(){
         Intent intent = new Intent(this, StartScreenActivity.class);
+        startActivity(intent);
+    }
+
+    //Open info page
+    public void openInfoActivity() {
+        Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
 }
