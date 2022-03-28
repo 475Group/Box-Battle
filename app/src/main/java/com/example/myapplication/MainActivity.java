@@ -88,8 +88,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
                                 (dialog, which) -> openStartScreen());
                     }
-                    if (player1ScoreValue < player2ScoreValue) {
+                    else if (player1ScoreValue < player2ScoreValue) {
                         alertDialog.setTitle(player2Text.getText() + " Wins!");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                                (dialog, which) -> dialog.dismiss());
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                                (dialog, which) -> openStartScreen());
+                    }
+                    else{
+                        alertDialog.setTitle("TIE!");
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
                                 (dialog, which) -> dialog.dismiss());
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
