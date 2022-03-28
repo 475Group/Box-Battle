@@ -34,7 +34,7 @@ public class StartScreenActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                openSetUpScreenActivity();
                 finish();
 
             }
@@ -43,8 +43,8 @@ public class StartScreenActivity extends AppCompatActivity {
 
     }
 
-    public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openSetUpScreenActivity(){
+        Intent intent = new Intent(this, SetUpScreenActivity.class);
         startActivity(intent);
     }
 }

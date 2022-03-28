@@ -11,6 +11,8 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,18 +21,41 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
+    String player1Name, player2Name;
     int player1ScoreValue = 0, player2ScoreValue = 0;
     View previousLine = null;
     int turn = 0;
     ArrayList<View> lines = new ArrayList<>();
     ArrayList<TextView> wins = new ArrayList<>();
     int numOfLines;
+
+    public void setUpPlayerInfo(){
+        if (!(player1Name.equals(""))) {
+            player1Text.setText(player1Name);
+        }
+        if (!(player2Name.equals(""))) {
+            player2Text.setText(player2Name);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //Hides action bar
+        if(getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+
         setContentView(R.layout.activity_game_page);
         player1Text = findViewById(R.id.player1Text);
+        player1Name = getIntent().getExtras().getString("P1");
         player2Text = findViewById(R.id.player2Text);
+        player2Name = getIntent().getExtras().getString("P2");
+        setUpPlayerInfo();
         player1Score = findViewById(R.id.player1Score);
         player2Score = findViewById(R.id.player2Score);
         player1Turn = findViewById(R.id.Player1Turn);

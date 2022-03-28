@@ -16,7 +16,7 @@
         android:fontFamily="@font/permanent_marker"
         android:text="BOX BATTLE"
         android:textAlignment="center"
-        android:textColor="#AEEA00"
+        android:textColor="#689F38"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
