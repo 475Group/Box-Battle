@@ -98,8 +98,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openInfoActivity();
-                finish();
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
+                //finish();
+                /*openInfoActivity();
+                finish();*/
             }
         });
 
