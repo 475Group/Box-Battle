@@ -14,6 +14,7 @@ public class StartScreenActivity extends AppCompatActivity {
      Button button;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,18 +33,21 @@ public class StartScreenActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.monplaisir);   //Play music on after start button
-        button.setOnClickListener(v -> {
-            openMainActivity();
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openSetUpScreenActivity();
                 mp.start();
                 finish();
 
+            }
         });
 
 
     }
 
-    public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openSetUpScreenActivity(){
+        Intent intent = new Intent(this, SetUpScreenActivity.class);
         startActivity(intent);
     }
 }

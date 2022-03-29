@@ -10,12 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"
-            android:label="Settings" />
-        <activity
             android:name=".GamePage"
+            android:exported="false" />
+        <activity
+            android:name=".SetUpScreenActivity"
             android:exported="false" />
         <activity
             android:name=".StartScreenActivity"
