@@ -7,6 +7,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 
 import android.view.View;
@@ -23,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
     String player1Name, player2Name;
     int player1Color, player2Color;
+
+    ImageView avatarP1, avatarP2;
+    String player1Avatar, player2Avatar;
+    int imageResource1, imageResource2;
 
     int player1ScoreValue = 0, player2ScoreValue = 0;
     View previousLine = null;
@@ -44,6 +50,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         player2Text.setTextColor(player2Color);
         player2Score.setTextColor(player2Color);
+
+        System.out.println(player1Avatar);
+             imageResource1 = getResources().getIdentifier(player1Avatar, null, getPackageName());
+            avatarP1 = findViewById(R.id.avatarP1);
+            Drawable res1 = getResources().getDrawable(imageResource1);
+            avatarP1.setImageDrawable(res1);
+
+
+
+             imageResource2 = getResources().getIdentifier(player2Avatar, null, getPackageName());
+            avatarP2 = findViewById(R.id.avatarP2);
+            Drawable res2 = getResources().getDrawable(imageResource2);
+            avatarP2.setImageDrawable(res2);
+
 
     }
 
@@ -67,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player2Text = findViewById(R.id.player2Text);
         player2Name = getIntent().getExtras().getString("P2");
         player2Color = getIntent().getIntExtra("colorP2", -16777216);
+        player1Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP1");
+        player2Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP2");
+        avatarP1 = findViewById(R.id.avatarP1);
+        avatarP2 = findViewById(R.id.avatarP2);
         player1Score = findViewById(R.id.player1Score);
         player2Score = findViewById(R.id.player2Score);
         player1Turn = findViewById(R.id.Player1Turn);
@@ -74,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
+
 
         settingsButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
