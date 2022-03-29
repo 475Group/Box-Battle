@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -11,7 +12,6 @@ import android.widget.Button;
 
 public class StartScreenActivity extends AppCompatActivity {
      Button button;
-
 
 
     @Override
@@ -31,13 +31,12 @@ public class StartScreenActivity extends AppCompatActivity {
 
 
         button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                openMainActivity();
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.monplaisir);   //Play music on after start button
+        button.setOnClickListener(v -> {
+            openMainActivity();
+                mp.start();
                 finish();
 
-            }
         });
 
 

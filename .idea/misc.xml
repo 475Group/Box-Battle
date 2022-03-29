@@ -7,7 +7,14 @@
         <entry key="..\:/Users/Cyaira/Downloads/MyApplication/app/src/main/res/drawable/line.xml" value="0.175" />
         <entry key="..\:/Users/Cyaira/Downloads/MyApplication/app/src/main/res/drawable/triangle.xml" value="0.1" />
         <entry key="..\:/Users/Cyaira/Downloads/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/xml/root_preferences.xml" value="0.22" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/drawable/notif_icon_background.xml" value="0.1" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/drawable/notif_icon_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/drawable/sound_icon_background.xml" value="0.1" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/drawable/sound_icon_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/layout/activity_main.xml" value="0.10185185185185185" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/layout/activity_start_screen.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/layout/settings_activity.xml" value="0.33" />
+        <entry key="..\:/Users/jadaa/AndroidStudioProjects/Box-Battle/app/src/main/res/xml/root_preferences.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/heart_icon_foreground.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/info_button_background.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/settings_button_background.xml" value="0.2085" />
