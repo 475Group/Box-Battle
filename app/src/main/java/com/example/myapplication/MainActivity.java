@@ -7,10 +7,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,66 +22,124 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    //text palyer name and score shown on page
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
-    //initalize scores to 0
+    String player1Name, player2Name;
+    int player1Color, player2Color;
+
+    ImageView avatarP1, avatarP2;
+    String player1Avatar, player2Avatar;
+    int imageResource1, imageResource2;
+
     int player1ScoreValue = 0, player2ScoreValue = 0;
-    //no line selected yet so previous line is null
     View previousLine = null;
-    //first player starts game
     int turn = 0;
-    //stores all lines selected in game
     ArrayList<View> lines = new ArrayList<>();
-    //stores all possible wins in game
     ArrayList<TextView> wins = new ArrayList<>();
+    int numOfLines;
+
+    public void setUpPlayerInfo(){
+        if (!(player1Name.equals(""))) {
+            player1Text.setText(player1Name);
+
+        }
+        player1Text.setTextColor(player1Color);
+        player1Score.setTextColor(player1Color);
+
+        if (!(player2Name.equals(""))) {
+            player2Text.setText(player2Name);
+        }
+        player2Text.setTextColor(player2Color);
+        player2Score.setTextColor(player2Color);
+
+        System.out.println(player1Avatar);
+             imageResource1 = getResources().getIdentifier(player1Avatar, null, getPackageName());
+            avatarP1 = findViewById(R.id.avatarP1);
+            Drawable res1 = getResources().getDrawable(imageResource1);
+            avatarP1.setImageDrawable(res1);
+
+
+
+             imageResource2 = getResources().getIdentifier(player2Avatar, null, getPackageName());
+            avatarP2 = findViewById(R.id.avatarP2);
+            Drawable res2 = getResources().getDrawable(imageResource2);
+            avatarP2.setImageDrawable(res2);
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_page_3x2);
-        //get views(these should be in their own class)
+
+        //Remove title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //Hides action bar
+        if(getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+
+
+        setContentView(R.layout.activity_game_page);
         player1Text = findViewById(R.id.player1Text);
+        player1Name = getIntent().getExtras().getString("P1");
+        player1Color = getIntent().getIntExtra("colorP1", -16777216);
         player2Text = findViewById(R.id.player2Text);
+        player2Name = getIntent().getExtras().getString("P2");
+        player2Color = getIntent().getIntExtra("colorP2", -16777216);
+        player1Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP1");
+        player2Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP2");
+        avatarP1 = findViewById(R.id.avatarP1);
+        avatarP2 = findViewById(R.id.avatarP2);
         player1Score = findViewById(R.id.player1Score);
         player2Score = findViewById(R.id.player2Score);
         player1Turn = findViewById(R.id.Player1Turn);
         player2Turn = findViewById(R.id.Player2Turn);
+        setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
-        Button confirmButton = findViewById(R.id.confirmButton);
 
-        //adding on click listener for settings button
-         settingsButton.setOnClickListener(view -> {
-             //opens a new intent to open the settings activity.
-             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-             startActivity(i);
-         });
 
-        //on click listener for info
-        infoButton.setOnClickListener(view -> {
+        settingsButton.setOnClickListener(view -> {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Settings");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    (dialog, which) -> dialog.dismiss());
+
+            alertDialog.show();
+        });
+
+
+        /*infoButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             alertDialog.setTitle("Info");
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                     (dialog, which) -> dialog.dismiss());
 
             alertDialog.show();
-        });
-        //clear board on start
-        clearBoard();
+        });*/
 
-        //on click listener for confirm button
+        //Open info page
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
+                //finish();
+                /*openInfoActivity();
+                finish();*/
+            }
+        });
+
+        clearBoard();
+        Button confirmButton = findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(view -> {
-            //there must be a line selected
             if(previousLine != null) {
                 previousLine.setClickable(false);
-                //checks if current player got a win
                 boolean stillLastPlayerTurn = checkWin(previousLine);
-                //board size(should be global)
                 int boardSize = 6;
-                //checks if there was a win
                 if (player2ScoreValue + player1ScoreValue == boardSize)
                 {
-                    //alerts players of winner
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                     if (player1ScoreValue > player2ScoreValue) {
                         alertDialog.setTitle(player1Text.getText() + " Wins!");
@@ -86,15 +148,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
                                 (dialog, which) -> openStartScreen());
                     }
-                    else if (player1ScoreValue < player2ScoreValue) {
+                    if (player1ScoreValue < player2ScoreValue) {
                         alertDialog.setTitle(player2Text.getText() + " Wins!");
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
-                                (dialog, which) -> dialog.dismiss());
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
-                                (dialog, which) -> openStartScreen());
-                    }
-                    else{
-                        alertDialog.setTitle("TIE!");
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
                                 (dialog, which) -> dialog.dismiss());
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
@@ -103,7 +158,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     alertDialog.show();
                     previousLine = null;
                 }
-                //otherwise switch players
                 else {
                     if(!stillLastPlayerTurn){
                         if (turn %2 == 0 ) {
@@ -116,12 +170,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                         turn++;
                     }
-                    //set  prev line to null to show that no line has been selected
                     previousLine = null;
                 }
             }
         });
-        //alert for quit
         Button quitButton = findViewById(R.id.quitButton);
         quitButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -133,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             alertDialog.show();
         });
-        //alert for restart
         Button restartButton = findViewById(R.id.restartButton);
         restartButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -146,10 +197,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             alertDialog.show();
         });
     }
-    //on click for lines
+
     @Override
     public void onClick(View view) {
-        //if no prev line, make clicked line visible skinnier
         if (previousLine == null) {
             ViewGroup.LayoutParams params = view.getLayoutParams();
             if (params.width == 130)
@@ -158,7 +208,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params.height = 20;
             view.setLayoutParams(params);
 
-            //remove if statements and just set color to black
             if (turn %2 == 0) {
                 view.setBackgroundColor(Color.BLACK);
 
@@ -167,7 +216,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 view.setBackgroundColor(Color.BLACK);
             }
         }
-        // if there is a previous line make it "invisible" and make clicked line visible and skinnier
         if (previousLine != null){
             previousLine.setBackgroundColor(findViewById(R.id.square).getSolidColor());
             ViewGroup.LayoutParams params = previousLine.getLayoutParams();
@@ -190,41 +238,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 view.setBackgroundColor(Color.BLACK);
             }
         }
-        //current line is now previous line
+
         previousLine = view;
     }
-    //checks returns true if player made a square
+
     @SuppressLint("SetTextI18n")
     public boolean checkWin(View line){
-        //add line to arraylist
         lines.add(line);
-        //used to find line
         Resources r = getResources();
         String name = getPackageName();
-        //value to be returned
         boolean thereWasAWinner = false;
-        //conditions to make a box
         int firstCondition;
         int secondCondition;
         int thirdCondition;
         int fourthCondition;
-        //helper for variables first in row
         int k = 0;
-        //only need to loop through horizontal lines in rows n-1
         int lastLineInRowsNMin1 = 6;
-        //number of rows
         int numOfRows = 3;
-        //horizontal lines
         int numOfRowLines = 9;
-        //all lines are tagged with their graph type
         String graphType = "_2x3";
-        //loop through horizontal lines in rows n-1
         for (int i = 1; i <= lastLineInRowsNMin1; i++){
-            //get top line
             firstCondition = i;
-            //get bottom line
             secondCondition = i+numOfRows;
-            //if i is not first line and previous iterated line is last horizontal line in row get left and right line
             if (i-1 != 0 && (i-1)%numOfRows == 0) {
                 thirdCondition = i + numOfRowLines + 1 + k;
                 fourthCondition = i + numOfRowLines + 2 + k;
@@ -234,7 +269,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 thirdCondition = i+numOfRowLines + k;
                 fourthCondition = i + numOfRowLines+1 + k;
             }
-            //check conditions
             if (lines.contains(findViewById(r.getIdentifier("line" + firstCondition + graphType, "id", name))) &&
                     lines.contains(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name)))&&
                     lines.contains(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))&&
@@ -243,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     line.equals(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name))) ||
                         line.equals(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))||
                             line.equals(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
-                    //increment score of winner and show win
+
                     if (turn % 2 == 0) {
                         player1ScoreValue++;
                         player1Score.setText("Score: " + player1ScoreValue);
@@ -251,8 +285,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         player2ScoreValue++;
                         player2Score.setText("Score: " + player2ScoreValue);
-                        wins.get(i - 1).setTextColor(player2Text.getCurrentTextColor());
+                        wins.get(i-1).setTextColor(player2Text.getCurrentTextColor());
                     }
+
                     thereWasAWinner = true;
 
                 }
@@ -260,12 +295,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
-        //return if there was a winner
         return thereWasAWinner;
     }
     @SuppressLint("SetTextI18n")
-    //erases all data on board
     public void clearBoard(){
+        numOfLines = 0;
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
         turn = 0;
@@ -290,6 +324,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
             line.setLayoutParams(params);
             line.setOnClickListener(this);
+            numOfLines++;
         }
         for (int i = 1; i <= numOfWins; i++)
         {
@@ -300,6 +335,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void openStartScreen(){
         Intent intent = new Intent(this, StartScreenActivity.class);
+        startActivity(intent);
+    }
+
+    //Open info page
+    public void openInfoActivity() {
+        Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
 }

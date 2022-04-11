@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="Play"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/permanent_marker"
+        android:text="@string/box_battle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#689F38"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <EditText
+        android:id="@+id/inputTextP1"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Player 1"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/inputTextP2"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Player 2"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="247dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73">
+
+        <RadioButton
+            android:id="@+id/redp2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#E67268"
+            android:textColor="#E67268" />
+
+        <RadioButton
+            android:id="@+id/orangep2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#FF9E80"
+            android:textColor="#FF9E80" />
+
+        <RadioButton
+            android:id="@+id/yellowp2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#FFD180"
+            android:textColor="#FFE57F" />
+
+        <RadioButton
+            android:id="@+id/greenp2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#9AC568"
+            android:textColor="#9AC568" />
+
+        <RadioButton
+            android:id="@+id/bluep2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#82B1FF"
+            android:textColor="#82B1FF" />
+
+        <RadioButton
+            android:id="@+id/purplep2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#B388FF"
+            android:textColor="#B388FF" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="247dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435">
+
+        <RadioButton
+            android:id="@+id/redp1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#E67268"
+            android:textColor="#E67268" />
+
+        <RadioButton
+            android:id="@+id/orangep1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#FF9E80"
+            android:textColor="#FF9E80" />
+
+        <RadioButton
+            android:id="@+id/yellowp1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#FFD180"
+            android:textColor="#FFE57F" />
+
+        <RadioButton
+            android:id="@+id/greenp1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#9AC568"
+            android:textColor="#9AC568" />
+
+        <RadioButton
+            android:id="@+id/bluep1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#82B1FF"
+            android:textColor="#82B1FF" />
+
+        <RadioButton
+            android:id="@+id/purplep1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="#B388FF"
+            android:textColor="#B388FF" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:dividerPadding="50dp"
+        android:gravity="center|right"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343">
+
+        <RadioButton
+            android:id="@+id/cookieMonster1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/cookie_monster"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="cookie_monster" />
+
+        <RadioButton
+            android:id="@+id/amethyst1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/amethyst_universe"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="amethyst_universe" />
+
+        <RadioButton
+            android:id="@+id/homerSimp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/homer_simpson"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="homer_simpson" />
+
+        <RadioButton
+            android:id="@+id/jerry1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/jerry"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="jerry" />
+
+        <RadioButton
+            android:id="@+id/kermit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/kermit_the_frog"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="kermit_the_frog" />
+
+        <RadioButton
+            android:id="@+id/spongebob1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/spongebob_squarepants"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="spongebob_squarepants" />
+
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup4"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:dividerPadding="50dp"
+        android:gravity="center|right"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653">
+
+        <RadioButton
+            android:id="@+id/cookieMonster2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/cookie_monster"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="cookie_monster" />
+
+        <RadioButton
+            android:id="@+id/amethyst2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/amethyst_universe"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="amethyst_universe" />
+
+        <RadioButton
+            android:id="@+id/homerSimp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/homer_simpson"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="homer_simpson" />
+
+        <RadioButton
+            android:id="@+id/jerry2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/jerry"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="jerry" />
+
+        <RadioButton
+            android:id="@+id/kermit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/kermit_the_frog"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="kermit_the_frog" />
+
+        <RadioButton
+            android:id="@+id/spongebob2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_selector"
+            android:button="@drawable/spongebob_squarepants"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="spongebob_squarepants" />
+
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
