@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,8 +29,8 @@ public class SetUpScreenActivity extends AppCompatActivity {
     EditText inputTextP2;
     String s1;
     String s2;
-    int player1Color;
-    int player2Color;
+    int player1Color = Color.parseColor("#FF6D00");
+    int player2Color = Color.parseColor("#AA00FF");
     String player1Avatar;
     String player2Avatar;
 

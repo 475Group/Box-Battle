@@ -22,20 +22,23 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    //text palyer name and score shown on page
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
     String player1Name, player2Name;
     int player1Color, player2Color;
-
     ImageView avatarP1, avatarP2;
     String player1Avatar, player2Avatar;
     int imageResource1, imageResource2;
-
+    //initalize scores to 0
     int player1ScoreValue = 0, player2ScoreValue = 0;
-    View previousLine = null;
+    //no line selected yet so previous line is null
+    View currLine = null;
+    //first player starts game
     int turn = 0;
+    //stores all lines selected in game
     ArrayList<View> lines = new ArrayList<>();
+    //stores all possible wins in game
     ArrayList<TextView> wins = new ArrayList<>();
-    int numOfLines;
 
     public void setUpPlayerInfo(){
         if (!(player1Name.equals(""))) {
@@ -81,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         setContentView(R.layout.activity_game_page);
+        //get views(these should be in their own class)
         player1Text = findViewById(R.id.player1Text);
         player1Name = getIntent().getExtras().getString("P1");
         player1Color = getIntent().getIntExtra("colorP1", -16777216);
@@ -100,24 +104,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView infoButton = findViewById(R.id.infoIcon);
 
 
+        //adding on click listener for settings button
         settingsButton.setOnClickListener(view -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Settings");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    (dialog, which) -> dialog.dismiss());
-
-            alertDialog.show();
+            //opens a new intent to open the settings activity.
+            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(i);
         });
-
-
-        /*infoButton.setOnClickListener(view -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Info");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    (dialog, which) -> dialog.dismiss());
-
-            alertDialog.show();
-        });*/
 
         //Open info page
         infoButton.setOnClickListener(new View.OnClickListener() {
@@ -131,49 +123,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        //clear board on start
         clearBoard();
-        Button confirmButton = findViewById(R.id.confirmButton);
-        confirmButton.setOnClickListener(view -> {
-            if(previousLine != null) {
-                previousLine.setClickable(false);
-                boolean stillLastPlayerTurn = checkWin(previousLine);
-                int boardSize = 6;
-                if (player2ScoreValue + player1ScoreValue == boardSize)
-                {
-                    AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                    if (player1ScoreValue > player2ScoreValue) {
-                        alertDialog.setTitle(player1Text.getText() + " Wins!");
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
-                                (dialog, which) -> dialog.dismiss());
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
-                                (dialog, which) -> openStartScreen());
-                    }
-                    if (player1ScoreValue < player2ScoreValue) {
-                        alertDialog.setTitle(player2Text.getText() + " Wins!");
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
-                                (dialog, which) -> dialog.dismiss());
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
-                                (dialog, which) -> openStartScreen());
-                    }
-                    alertDialog.show();
-                    previousLine = null;
-                }
-                else {
-                    if(!stillLastPlayerTurn){
-                        if (turn %2 == 0 ) {
-                            player1Turn.setVisibility(View.INVISIBLE);
-                            player2Turn.setVisibility(View.VISIBLE);
-                        }
-                        else {
-                            player2Turn.setVisibility(View.INVISIBLE);
-                            player1Turn.setVisibility(View.VISIBLE);
-                        }
-                        turn++;
-                    }
-                    previousLine = null;
-                }
-            }
-        });
+
+        //alert for quit
         Button quitButton = findViewById(R.id.quitButton);
         quitButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -185,6 +138,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             alertDialog.show();
         });
+
+        //alert for restart
         Button restartButton = findViewById(R.id.restartButton);
         restartButton.setOnClickListener(view -> {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -200,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (previousLine == null) {
+        //if (previousLine == null) {
             ViewGroup.LayoutParams params = view.getLayoutParams();
             if (params.width == 130)
                 params.width = 20;
@@ -215,8 +170,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (turn %2 != 0) {
                 view.setBackgroundColor(Color.BLACK);
             }
-        }
-        if (previousLine != null){
+            currLine = view;
+            play();
+        // }
+        /*if (previousLine != null){
             previousLine.setBackgroundColor(findViewById(R.id.square).getSolidColor());
             ViewGroup.LayoutParams params = previousLine.getLayoutParams();
             if (params.width == 20)
@@ -239,12 +196,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        previousLine = view;
+        previousLine = view;*/
     }
-
+    public void play(){
+        //there must be a line selected
+        //if(previousLine != null) {
+        //    previousLine.setClickable(false);
+            //checks if current player got a win
+            boolean stillLastPlayerTurn = checkWin();
+            //board size(should be global)
+            int boardSize = 6;
+            //checks if there was a win
+            if (player2ScoreValue + player1ScoreValue == boardSize)
+            {
+                //alerts players of winner
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                if (player1ScoreValue > player2ScoreValue) {
+                    alertDialog.setTitle(player1Text.getText() + " Wins!");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                            (dialog, which) -> openStartScreen());
+                }
+                else if (player1ScoreValue < player2ScoreValue) {
+                    alertDialog.setTitle(player2Text.getText() + " Wins!");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                            (dialog, which) -> openStartScreen());
+                }
+                else{
+                    alertDialog.setTitle("TIE!");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "CANCEL",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "QUIT",
+                            (dialog, which) -> openStartScreen());
+                }
+                alertDialog.show();
+                //previousLine = null;
+            }
+            //otherwise switch players
+            else {
+                if(!stillLastPlayerTurn){
+                    if (turn %2 == 0 ) {
+                        player1Turn.setVisibility(View.INVISIBLE);
+                        player2Turn.setVisibility(View.VISIBLE);
+                    }
+                    else {
+                        player2Turn.setVisibility(View.INVISIBLE);
+                        player1Turn.setVisibility(View.VISIBLE);
+                    }
+                    turn++;
+                }
+                //set  prev line to null to show that no line has been selected
+                //previousLine = null;
+            }
+        }
+    //}
     @SuppressLint("SetTextI18n")
-    public boolean checkWin(View line){
-        lines.add(line);
+    public boolean checkWin(){
+        lines.add(currLine);
         Resources r = getResources();
         String name = getPackageName();
         boolean thereWasAWinner = false;
@@ -273,10 +284,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     lines.contains(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name)))&&
                     lines.contains(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))&&
                     lines.contains(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
-                if(line.equals(findViewById(r.getIdentifier("line" + firstCondition + graphType, "id", name))) ||
-                    line.equals(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name))) ||
-                        line.equals(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))||
-                            line.equals(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
+                if(currLine.equals(findViewById(r.getIdentifier("line" + firstCondition + graphType, "id", name))) ||
+                    currLine.equals(findViewById(r.getIdentifier("line" + secondCondition + graphType, "id", name))) ||
+                        currLine.equals(findViewById(r.getIdentifier("line" + thirdCondition + graphType, "id", name)))||
+                            currLine.equals(findViewById(r.getIdentifier("line" + fourthCondition + graphType, "id", name)))){
 
                     if (turn % 2 == 0) {
                         player1ScoreValue++;
@@ -299,11 +310,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @SuppressLint("SetTextI18n")
     public void clearBoard(){
-        numOfLines = 0;
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
         turn = 0;
-        previousLine = null;
+        currLine = null;
         lines.clear();
         wins.clear();
         player1ScoreValue = 0;
@@ -324,7 +334,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
             line.setLayoutParams(params);
             line.setOnClickListener(this);
-            numOfLines++;
         }
         for (int i = 1; i <= numOfWins; i++)
         {

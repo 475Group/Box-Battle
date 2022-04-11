@@ -19,6 +19,11 @@
             android:name=".SetUpScreenActivity"
             android:exported="false" />
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".StartScreenActivity"
             android:exported="true">
             <intent-filter>
