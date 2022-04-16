@@ -2,4 +2,39 @@
     <string name="app_name">My Application</string>
     <string name="box_battle">BOX BATTLE</string>
     <string name="start">Start</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Title -->
+    <string name="general_header">General</string>
+    <string name="pref_header_about">About</string>
+
+    <!-- General Preferences -->
+    <string name="title_silent_mode">Silent Mode</string>
+    <string name="summary_silent">Mute all sounds from this app</string>
+    <string name="key_mute_sound">key_mute_sound</string>
+
+    <!-- About Preferences -->
+
+    <string name="title_version">Version</string>
+    <string name="app_version">1.0</string>
+
+
+    <string name="summary_support">Got any queries? We are happy to help!</string>
+    <string name="title_send_feedback">Send Feedback</string>
+    <string name="choose_email_client">Choose email client</string>
+    <string name="key_send_feedback">key_send_feedback</string>
+
+
+
+    <!-- Messages Preferences -->
+   <!-- <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    // Sync Preferences
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    -->
 </resources>
