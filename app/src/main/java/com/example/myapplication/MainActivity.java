@@ -24,11 +24,11 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //text palyer name and score shown on page
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
-    String player1Name, player2Name;
-    int player1Color, player2Color;
+    //String player1Name, player2Name;
+    //int player1Color, player2Color;
     ImageView avatarP1, avatarP2;
-    String player1Avatar, player2Avatar;
-    int imageResource1, imageResource2;
+    //String player1Avatar, player2Avatar;
+    //int imageResource1, imageResource2;
     //initalize scores to 0
     int player1ScoreValue = 0, player2ScoreValue = 0;
     //no line selected yet so previous line is null
@@ -74,21 +74,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Remove title bar
+        /*//Remove title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Hides action bar
         if(getSupportActionBar() != null){
             getSupportActionBar().hide();
-        }
+        }*/
 
 
-        setContentView(R.layout.activity_game_page);
+        setContentView(Board.getLayout());
         //get views(these should be in their own class)
         player1Text = findViewById(R.id.player1Text);
+        player1Text.setText(Players.getPlayer1Name());
+        player1Text.setTextColor(Players.getPlayer1Color());
+
+        player2Text = findViewById(R.id.player2Text);
+        player2Text.setText(Players.getPlayer2Name());
+        player2Text.setTextColor(Players.getPlayer2Color());
         /*player1Name = getIntent().getExtras().getString("P1");
         player1Color = getIntent().getIntExtra("colorP1", -16777216);
-        player2Text = findViewById(R.id.player2Text);
         player2Name = getIntent().getExtras().getString("P2");
         player2Color = getIntent().getIntExtra("colorP2", -16777216);
         player1Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP1");
@@ -96,9 +101,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         avatarP1 = findViewById(R.id.avatarP1);
         avatarP2 = findViewById(R.id.avatarP2);*/
         player1Score = findViewById(R.id.player1Score);
+        player1Score.setTextColor(Players.getPlayer1Color());
+
         player2Score = findViewById(R.id.player2Score);
+        player2Score.setTextColor(Players.getPlayer2Color());
+
         player1Turn = findViewById(R.id.Player1Turn);
         player2Turn = findViewById(R.id.Player2Turn);
+
         //setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
@@ -163,13 +173,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params.height = 20;
             view.setLayoutParams(params);
 
-            if (turn %2 == 0) {
+            /*if (turn %2 == 0) {
                 view.setBackgroundColor(Color.BLACK);
 
             }
-            if (turn %2 != 0) {
+            if (turn %2 != 0) {*/
                 view.setBackgroundColor(Color.BLACK);
-            }
+            //}
             currLine = view;
             play();
         // }
@@ -267,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int lastLineInRowsNMin1 = 6;
         int numOfRows = 3;
         int numOfRowLines = 9;
-        String graphType = "_2x3";
+        String graphType = "_3x2";
         for (int i = 1; i <= lastLineInRowsNMin1; i++){
             firstCondition = i;
             secondCondition = i+numOfRows;
@@ -325,7 +335,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int l = 17;
         int numOfWins = 6;
         for (int i = 1; i <= l; i++) {
-            View line = findViewById(r.getIdentifier("line" + i + "_2x3", "id", name));
+            View line = findViewById(r.getIdentifier("line" + i + Board.getGraphType(), "id", name));
             ViewGroup.LayoutParams params = line.getLayoutParams();
             if (params.height < params.width)
                 params.height = 130;
@@ -337,7 +347,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         for (int i = 1; i <= numOfWins; i++)
         {
-            TextView x = findViewById(r.getIdentifier("win"+i+"_2x3", "id", name));
+            TextView x = findViewById(r.getIdentifier("win"+i+Board.getGraphType(), "id", name));
             x.setTextColor(findViewById(R.id.square).getSolidColor());
             wins.add(x);
         }

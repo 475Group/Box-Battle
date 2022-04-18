@@ -5,21 +5,9 @@ import android.view.View;
 import java.util.ArrayList;
 
 public final class Board {
-    private static int length, height;
-    private static String graphType;
-    private static int layout;
-
-   /* public Board() {
-        try {
-            setSize(3,2);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
-   /* public Board(int length, int height) {
-        setSize(length,height);
-    }*/
+    private static int length = 3, height = 2;
+    private static String graphType = "_3x2";
+    private static int layout = R.layout.activity_game_page_3x2;
 
     public static int getTotalWins(){
         return length*height;

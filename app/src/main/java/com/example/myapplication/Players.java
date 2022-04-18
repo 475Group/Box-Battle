@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public final class Players extends AppCompatActivity {
-    private  static String player1Name, player2Name;
-    private static Color p1Color,p2Color;
-    private static int p1Drawable, p2Drawable;
+    private static String player1Name = "Player1", player2Name = "Player2";
+    private static int p1Color = Color.parseColor("#B388FF"), p2Color = Color.parseColor("#FFD180");
+    private static int p1Drawable = R.drawable.cookie_monster, p2Drawable =R.drawable.amethyst_universe;
     private static int setDrawable(int i){
         switch (i){
             case 0: return R.drawable.cookie_monster;
@@ -48,7 +48,7 @@ public final class Players extends AppCompatActivity {
     }
 
     public static void setPlayer1Name(String name) {
-        player1Name=name;
+        player1Name =name;
     }
 
     public static String getPlayer2Name() {
@@ -56,26 +56,26 @@ public final class Players extends AppCompatActivity {
     }
 
     public static void setPlayer2Name(String name) {
-        player2Name=name;
+        player2Name =name;
     }
 
     @SuppressLint("NewApi")
-    public static Color getPlayer1Color() {
+    public static int getPlayer1Color() {
         return p1Color;
     }
 
     @SuppressLint("NewApi")
-    public static Color getPlayer2Color() {
+    public static int getPlayer2Color() {
         return p2Color;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void setPlayer1Color(int color) {
-        p1Color = Color.valueOf(color);
+        p1Color = color;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void setPlayer2Color(int color) {
-        p2Color = Color.valueOf(color);
+        p2Color = color;
     }
 }
