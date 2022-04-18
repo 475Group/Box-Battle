@@ -19,6 +19,9 @@
             android:name=".SetUpScreenActivity"
             android:exported="false" />
         <activity
+            android:name=".SetUpActivityFixed"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="Settings"

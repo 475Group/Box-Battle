@@ -6,6 +6,70 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/_11x9"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="11x9"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
+        android:id="@+id/_8x6"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="8x6"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
+        android:id="@+id/_5x4"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="5x4"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
+        android:id="@+id/_3x2"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="3x2"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
         android:id="@+id/confirmButton"
         android:layout_width="130dp"
         android:layout_height="49dp"
@@ -19,7 +83,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.951" />
 
     <TextView
         android:id="@+id/textView"
@@ -79,52 +143,52 @@
         app:layout_constraintVertical_bias="0.73">
 
         <RadioButton
-            android:id="@+id/redp2"
+            android:id="@+id/c1.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#E67268"
-            android:textColor="#E67268" />
+            android:buttonTint="@color/red"
+            android:textColor="@color/red" />
 
         <RadioButton
-            android:id="@+id/orangep2"
+            android:id="@+id/c2.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#FF9E80"
-            android:textColor="#FF9E80" />
+            android:buttonTint="@color/orange"
+            android:textColor="@color/orange" />
 
         <RadioButton
-            android:id="@+id/yellowp2"
+            android:id="@+id/c3.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#FFD180"
-            android:textColor="#FFE57F" />
+            android:buttonTint="@color/yellow"
+            android:textColor="@color/yellow" />
 
         <RadioButton
-            android:id="@+id/greenp2"
+            android:id="@+id/c4.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#9AC568"
-            android:textColor="#9AC568" />
+            android:buttonTint="@color/green"
+            android:textColor="@color/green" />
 
         <RadioButton
-            android:id="@+id/bluep2"
+            android:id="@+id/c5.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#82B1FF"
-            android:textColor="#82B1FF" />
+            android:buttonTint="@color/blue"
+            android:textColor="@color/blue" />
 
         <RadioButton
-            android:id="@+id/purplep2"
+            android:id="@+id/c6.2"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#B388FF"
-            android:textColor="#B388FF" />
+            android:buttonTint="@color/purple"
+            android:textColor="@color/purple" />
 
     </RadioGroup>
 
@@ -141,52 +205,53 @@
         app:layout_constraintVertical_bias="0.435">
 
         <RadioButton
-            android:id="@+id/redp1"
+            android:id="@+id/c1.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#E67268"
-            android:textColor="#E67268" />
+            android:buttonTint="@color/red"
+            android:textColor="@color/red"
+            />
 
         <RadioButton
-            android:id="@+id/orangep1"
+            android:id="@+id/c2.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#FF9E80"
-            android:textColor="#FF9E80" />
+            android:buttonTint="@color/orange"
+            android:textColor="@color/orange" />
 
         <RadioButton
-            android:id="@+id/yellowp1"
+            android:id="@+id/c3.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#FFD180"
-            android:textColor="#FFE57F" />
+            android:buttonTint="@color/yellow"
+            android:textColor="@color/orange" />
 
         <RadioButton
-            android:id="@+id/greenp1"
+            android:id="@+id/c4.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#9AC568"
-            android:textColor="#9AC568" />
+            android:buttonTint="@color/green"
+            android:textColor="@color/green" />
 
         <RadioButton
-            android:id="@+id/bluep1"
+            android:id="@+id/c5.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#82B1FF"
-            android:textColor="#82B1FF" />
+            android:buttonTint="@color/blue"
+            android:textColor="@color/blue" />
 
         <RadioButton
-            android:id="@+id/purplep1"
+            android:id="@+id/c6.1"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:buttonTint="#B388FF"
-            android:textColor="#B388FF" />
+            android:buttonTint="@color/purple"
+            android:textColor="@color/purple" />
 
     </RadioGroup>
 
@@ -206,7 +271,7 @@
         app:layout_constraintVertical_bias="0.343">
 
         <RadioButton
-            android:id="@+id/cookieMonster1"
+            android:id="@+id/RB1.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -219,7 +284,7 @@
             android:contentDescription="cookie_monster" />
 
         <RadioButton
-            android:id="@+id/amethyst1"
+            android:id="@+id/RB2.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -231,7 +296,7 @@
             android:contentDescription="amethyst_universe" />
 
         <RadioButton
-            android:id="@+id/homerSimp1"
+            android:id="@+id/RB3.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -242,7 +307,7 @@
             android:contentDescription="homer_simpson" />
 
         <RadioButton
-            android:id="@+id/jerry1"
+            android:id="@+id/RB4.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -253,7 +318,7 @@
             android:contentDescription="jerry" />
 
         <RadioButton
-            android:id="@+id/kermit1"
+            android:id="@+id/RB5.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -264,7 +329,7 @@
             android:contentDescription="kermit_the_frog" />
 
         <RadioButton
-            android:id="@+id/spongebob1"
+            android:id="@+id/RB6.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -293,7 +358,7 @@
         app:layout_constraintVertical_bias="0.653">
 
         <RadioButton
-            android:id="@+id/cookieMonster2"
+            android:id="@+id/RB1.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -306,7 +371,7 @@
             android:contentDescription="cookie_monster" />
 
         <RadioButton
-            android:id="@+id/amethyst2"
+            android:id="@+id/RB2.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -318,7 +383,7 @@
             android:contentDescription="amethyst_universe" />
 
         <RadioButton
-            android:id="@+id/homerSimp2"
+            android:id="@+id/RB3.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -329,7 +394,7 @@
             android:contentDescription="homer_simpson" />
 
         <RadioButton
-            android:id="@+id/jerry2"
+            android:id="@+id/RB4.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -340,7 +405,7 @@
             android:contentDescription="jerry" />
 
         <RadioButton
-            android:id="@+id/kermit2"
+            android:id="@+id/RB5.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -351,7 +416,7 @@
             android:contentDescription="kermit_the_frog" />
 
         <RadioButton
-            android:id="@+id/spongebob2"
+            android:id="@+id/RB6.2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -363,6 +428,20 @@
 
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="561dp"
+        android:layout_marginEnd="269dp"
+        android:layout_marginBottom="151dp"
+        android:text="Select Board Size:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,7 +61,7 @@ public class SetUpScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SetUpScreenActivity.this, MainActivity.class);
-                //custom name
+               /* //custom name
                 s1 = inputTextP1.getText().toString();
                 s2 = inputTextP2.getText().toString();
                 intent.putExtra("P1", s1);
@@ -78,17 +78,19 @@ public class SetUpScreenActivity extends AppCompatActivity {
                 //custom avatar
                 radioButton3 = findViewById(radioGroupAvatar1.getCheckedRadioButtonId());
                 radioButton4 = findViewById(radioGroupAvatar2.getCheckedRadioButtonId());
-                player1Avatar = (String) radioButton3.getContentDescription();
-                player2Avatar = (String) radioButton4.getContentDescription();
+                player1Avatar = (String) radioButton3.getText();
+                player2Avatar = (String) radioButton4.getText();
                 intent.putExtra("avatarP1", player1Avatar);
                 intent.putExtra("avatarP2", player2Avatar);
-
+*/
 
 
                 startActivity(intent);
                 finish();
 
             }
+
+
         });
 
 

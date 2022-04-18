@@ -47,7 +47,7 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void openSetUpScreenActivity(){
-        Intent intent = new Intent(this, SetUpScreenActivity.class);
+        Intent intent = new Intent(this, SetUpActivityFixed.class);
         startActivity(intent);
     }
 }

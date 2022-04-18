@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //stores all possible wins in game
     ArrayList<TextView> wins = new ArrayList<>();
 
-    public void setUpPlayerInfo(){
+    /*public void setUpPlayerInfo(){
         if (!(player1Name.equals(""))) {
             player1Text.setText(player1Name);
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             avatarP2.setImageDrawable(res2);
 
 
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_game_page);
         //get views(these should be in their own class)
         player1Text = findViewById(R.id.player1Text);
-        player1Name = getIntent().getExtras().getString("P1");
+        /*player1Name = getIntent().getExtras().getString("P1");
         player1Color = getIntent().getIntExtra("colorP1", -16777216);
         player2Text = findViewById(R.id.player2Text);
         player2Name = getIntent().getExtras().getString("P2");
@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP1");
         player2Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP2");
         avatarP1 = findViewById(R.id.avatarP1);
-        avatarP2 = findViewById(R.id.avatarP2);
+        avatarP2 = findViewById(R.id.avatarP2);*/
         player1Score = findViewById(R.id.player1Score);
         player2Score = findViewById(R.id.player2Score);
         player1Turn = findViewById(R.id.Player1Turn);
         player2Turn = findViewById(R.id.Player2Turn);
-        setUpPlayerInfo();
+        //setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
 

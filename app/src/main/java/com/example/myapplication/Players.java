@@ -1,59 +1,81 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Players {
-    private TextView player1Name, player2Name;
 
-    public Players(){
-        setPlayer1Name("Player1");
-        setPlayer1Color(Color.parseColor("#FF6D00"));
-        setPlayer2Name("Player2");
-        setPlayer2Color(Color.parseColor("#AA00FF"));
-
+public final class Players extends AppCompatActivity {
+    private  static String player1Name, player2Name;
+    private static Color p1Color,p2Color;
+    private static int p1Drawable, p2Drawable;
+    private static int setDrawable(int i){
+        switch (i){
+            case 0: return R.drawable.cookie_monster;
+            case 1: return R.drawable.amethyst_universe;
+            case 2: return R.drawable.homer_simpson;
+            case 3: return R.drawable.jerry;
+            case 4: return R.drawable.kermit_the_frog;
+            default: return R.drawable.spongebob_squarepants;
+        }
     }
 
-    public Players(String p1, int p1Color, String p2, int p2Color){
-        setPlayer1Name(p1);
-        setPlayer1Color(p1Color);
-        setPlayer2Name(p2);
-        setPlayer2Color(p2Color);
+    public static void setP1Drawable(int i) {
+        p1Drawable = setDrawable(i);
     }
 
-    public TextView getPlayer1Name() {
+    public static void setP2Drawable(int i) {
+        p2Drawable = setDrawable(i);
+    }
+
+    public static int getP1Drawable() {
+        return p1Drawable;
+    }
+
+    public static int getP2Drawable() {
+        return p2Drawable;
+    }
+
+    public static String getPlayer1Name() {
         return player1Name;
     }
 
-    public void setPlayer1Name(String player1Name) {
-        this.player1Name.setText(player1Name);
+    public static void setPlayer1Name(String name) {
+        player1Name=name;
     }
 
-    public TextView getPlayer2Name() {
+    public static String getPlayer2Name() {
         return player2Name;
     }
 
-    public void setPlayer2Name(String player2Name) {
-        this.player2Name.setText(player2Name);
+    public static void setPlayer2Name(String name) {
+        player2Name=name;
     }
 
     @SuppressLint("NewApi")
-    public Color getPlayer1Color() {
-        return Color.valueOf(player1Name.getCurrentTextColor());
+    public static Color getPlayer1Color() {
+        return p1Color;
     }
 
     @SuppressLint("NewApi")
-    public Color getPlayer2Color() {
-        return Color.valueOf(player2Name.getCurrentTextColor());
+    public static Color getPlayer2Color() {
+        return p2Color;
     }
 
-    public void setPlayer1Color(int player1Color) {
-        this.player1Name.setTextColor(player1Color);
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static void setPlayer1Color(int color) {
+        p1Color = Color.valueOf(color);
     }
 
-    public void setPlayer2Color(int player2Color) {
-        this.player2Name.setTextColor(player2Color);
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static void setPlayer2Color(int color) {
+        p2Color = Color.valueOf(color);
     }
 }

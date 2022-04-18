@@ -4,55 +4,51 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-public class Board {
-    private int length, height;
-    private String graphType;
-    private int layout;
+public final class Board {
+    private static int length, height;
+    private static String graphType;
+    private static int layout;
 
-    public Board() {
+   /* public Board() {
         try {
             setSize(3,2);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    public Board(int length, int height) {
-        try {
-            setSize(length,height);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+   /* public Board(int length, int height) {
+        setSize(length,height);
+    }*/
 
-    public int getTotalWins(){
+    public static int getTotalWins(){
         return length*height;
     }
 
-    public int getNumOflines(){
+    public static int getNumOflines(){
         return length * (height+1) + height * (length+1);
     }
-    public int getHeight() {
+    public static int getHeight() {
         return height;
     }
 
-    public int getLength() {
+    public static int getLength() {
         return length;
     }
 
-    public int getLayout() {
+    public static int getLayout() {
         return layout;
     }
 
-    public String getGraphType() {
+    public static String getGraphType() {
         return graphType;
     }
 
-    public int getNumOfHorizontalLines(){
+    public static int getNumOfHorizontalLines(){
         return length * (height+1);
     }
 
-    private void setSize(int l, int h) throws Exception {
+    public static void setSize(int l, int h){
         String size = l + "x" + h;
         graphType = "_"+size;
         switch(size){
@@ -76,8 +72,6 @@ public class Board {
                 height = 9;
                 layout = R.layout.activity_game_page_11x9;
                 break;
-            default:
-                throw new Exception("Size Must Be: 3x2, 5x4, 8x6, or, 11x9");
-        }
+            }
     }
 }
