@@ -12,7 +12,6 @@ public final class Board {
     public static int getTotalWins(){
         return length*height;
     }
-
     public static int getNumOflines(){
         return length * (height+1) + height * (length+1);
     }

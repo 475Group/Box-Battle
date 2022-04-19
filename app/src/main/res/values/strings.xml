@@ -23,7 +23,11 @@
     <string name="title_send_feedback">Send Feedback</string>
     <string name="choose_email_client">Choose email client</string>
     <string name="key_send_feedback">key_send_feedback</string>
-
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="score_0">Score: 0</string>
+    <string name="quit">Quit</string>
+    <string name="restart">Restart</string>
 
 
     <!-- Messages Preferences -->

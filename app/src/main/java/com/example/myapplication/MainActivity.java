@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(Board.getLayout());
         //get views(these should be in their own class)
+        avatarP1 = findViewById(R.id.avatarP1);
+        avatarP1.setImageDrawable(getDrawable(Players.getP1Drawable()));
+
+        avatarP2 = findViewById(R.id.avatarP2);
+        avatarP2.setImageDrawable(getDrawable(Players.getP2Drawable()));
+
         player1Text = findViewById(R.id.player1Text);
         player1Text.setText(Players.getPlayer1Name());
         player1Text.setTextColor(Players.getPlayer1Color());
@@ -165,59 +171,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        //if (previousLine == null) {
+        if (!lines.contains(view)) {
+
             ViewGroup.LayoutParams params = view.getLayoutParams();
+            int size = 20;
             if (params.width == 130)
-                params.width = 20;
+                params.width = size;
             else
-                params.height = 20;
+                params.height = size;
             view.setLayoutParams(params);
-
-            /*if (turn %2 == 0) {
-                view.setBackgroundColor(Color.BLACK);
-
-            }
-            if (turn %2 != 0) {*/
-                view.setBackgroundColor(Color.BLACK);
-            //}
+            view.setBackgroundColor(Color.BLACK);
             currLine = view;
             play();
-        // }
-        /*if (previousLine != null){
-            previousLine.setBackgroundColor(findViewById(R.id.square).getSolidColor());
-            ViewGroup.LayoutParams params = previousLine.getLayoutParams();
-            if (params.width == 20)
-                params.width = 130;
-            else
-                params.height = 130;
-            previousLine.setLayoutParams(params);
-
-            ViewGroup.LayoutParams params0 = view.getLayoutParams();
-            if (params0.width == 130)
-                params0.width = 20;
-            else
-                params0.height = 20;
-            view.setLayoutParams(params0);
-            if (turn %2 == 0) {
-                view.setBackgroundColor(Color.BLACK);
-            }
-            if (turn %2 != 0) {
-                view.setBackgroundColor(Color.BLACK);
-            }
         }
 
-        previousLine = view;*/
     }
     public void play(){
         //there must be a line selected
-        //if(previousLine != null) {
-        //    previousLine.setClickable(false);
             //checks if current player got a win
             boolean stillLastPlayerTurn = checkWin();
-            //board size(should be global)
-            int boardSize = 6;
             //checks if there was a win
-            if (player2ScoreValue + player1ScoreValue == boardSize)
+            if (player2ScoreValue + player1ScoreValue == Board.getTotalWins())
             {
                 //alerts players of winner
                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -274,10 +248,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int thirdCondition;
         int fourthCondition;
         int k = 0;
-        int lastLineInRowsNMin1 = 6;
-        int numOfRows = 3;
-        int numOfRowLines = 9;
-        String graphType = "_3x2";
+        int lastLineInRowsNMin1 = Board.getNumOfHorizontalLines()-Board.getLength();
+        int numOfRows = Board.getLength();
+        int numOfRowLines = Board.getNumOfHorizontalLines();
+        String graphType = Board.getGraphType();
         for (int i = 1; i <= lastLineInRowsNMin1; i++){
             firstCondition = i;
             secondCondition = i+numOfRows;
@@ -332,18 +306,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player2Score.setText("Score: " + player2ScoreValue);
         Resources r = getResources();
         String name = getPackageName();
-        int l = 17;
-        int numOfWins = 6;
+        int l = Board.getNumOflines();
+        int numOfWins = Board.getTotalWins();
         for (int i = 1; i <= l; i++) {
-            View line = findViewById(r.getIdentifier("line" + i + Board.getGraphType(), "id", name));
-            ViewGroup.LayoutParams params = line.getLayoutParams();
-            if (params.height < params.width)
-                params.height = 130;
-            else
-                params.width = 130;
-            line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
-            line.setLayoutParams(params);
-            line.setOnClickListener(this);
+                View line = findViewById(r.getIdentifier("line" + i + Board.getGraphType(), "id", name));
+                ViewGroup.LayoutParams params = line.getLayoutParams();
+                if (params.height <= params.width)
+                    params.height = 130;
+                else
+                    params.width = 130;
+                line.setBackgroundColor(findViewById(R.id.square).getSolidColor());
+                line.setLayoutParams(params);
+                line.setOnClickListener(this);
         }
         for (int i = 1; i <= numOfWins; i++)
         {
