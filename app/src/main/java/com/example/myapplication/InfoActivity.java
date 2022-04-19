@@ -32,10 +32,14 @@ public class InfoActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InfoActivity.this, MainActivity.class);
-                startActivity(intent);
-                //finish();
+                /*Intent intent = new Intent(InfoActivity.this, MainActivity.class);
+                startActivity(intent);*/
+                finish();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

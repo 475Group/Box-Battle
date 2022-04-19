@@ -86,15 +86,14 @@ public class SetUpScreenActivity extends AppCompatActivity {
 
 
                 startActivity(intent);
-                finish();
+                //finish();
 
             }
 
 
         });
-
-
     }
+
 
 
 

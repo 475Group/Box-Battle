@@ -13,9 +13,6 @@
             android:name=".InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".GamePage"
-            android:exported="false" />
-        <activity
             android:name=".SetUpScreenActivity"
             android:exported="false" />
         <activity
