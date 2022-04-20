@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final int PADDING = 200;
+    public static final int PADDING = 130;
     //text palyer name and score shown on page
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
     //String player1Name, player2Name;

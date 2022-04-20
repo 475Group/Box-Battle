@@ -3,23 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
 
-    <Button
-        android:id="@+id/_11x9"
-        android:layout_width="67dp"
-        android:layout_height="46dp"
-        android:backgroundTint="#AEEA00"
-        android:fontFamily="@font/permanent_marker"
-        android:text="11x9"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
 
     <Button
         android:id="@+id/_8x6"
@@ -31,7 +18,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,6 +31,22 @@
         android:backgroundTint="#AEEA00"
         android:fontFamily="@font/permanent_marker"
         android:text="5x4"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
+        android:id="@+id/_3x3"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#AEEA00"
+        android:fontFamily="@font/permanent_marker"
+        android:text="3x3"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

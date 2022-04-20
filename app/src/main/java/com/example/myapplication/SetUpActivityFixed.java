@@ -2,16 +2,10 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Debug;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,13 +15,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class SetUpActivityFixed extends AppCompatActivity {
     ArrayList<RadioButton> p1Avatars, p2Avatars, p1Colors, p2Colors;
     EditText p1Name, p2Name;
-    Button _3x2,_5x4,_8x6,_11x9, startButton;
+    Button _3x2,_5x4,_8x6, _3x3, startButton;
     ArrayList<Button> buttons;
     View prevButton = null;
     View prevAvatarp1 = null, prevAvatarp2 = null;
@@ -126,11 +119,11 @@ public class SetUpActivityFixed extends AppCompatActivity {
         _3x2 = findViewById(R.id._3x2);
         _5x4 = findViewById(R.id._5x4);
         _8x6 = findViewById(R.id._8x6);
-        _11x9 = findViewById(R.id._11x9);
+        _3x3 = findViewById(R.id._3x3);
         buttons.add(_3x2);
+        buttons.add(_3x3);
         buttons.add(_5x4);
         buttons.add(_8x6);
-        buttons.add(_11x9);
 
         prevButton = buttons.get(Board.layoutNumber);
         prevButton.setBackgroundColor(Color.BLUE);
@@ -166,14 +159,14 @@ public class SetUpActivityFixed extends AppCompatActivity {
                 Board.setSize(8,6);
             }
         });
-        _11x9.setOnClickListener(new View.OnClickListener() {
+        _3x3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (prevButton != null)
                     prevButton.setBackgroundColor(originalColor);
                 view.setBackgroundColor(Color.BLUE);
                 prevButton = view;
-                Board.setSize(11,9);
+                Board.setSize(3,3);
             }
         });
         startButton = findViewById(R.id.confirmButton);
