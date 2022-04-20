@@ -119,6 +119,18 @@
         app:layout_constraintVertical_bias="0.322"
         tools:visibility="invisible" />
 
+    <ImageView
+        android:id="@+id/square"
+        android:layout_width="400dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Player1Turn"
+        app:srcCompat="@drawable/square"
+        tools:ignore="ContentDescription" />
+
 
     <TextView
         android:id="@+id/circle0"
@@ -126,11 +138,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <TextView
         android:id="@+id/circle1"
@@ -138,11 +150,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.334"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <TextView
         android:id="@+id/circle2"
@@ -150,11 +162,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <TextView
         android:id="@+id/circle3"
@@ -162,11 +174,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <TextView
         android:id="@+id/circle4"
@@ -174,11 +186,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/circle5"
@@ -186,11 +198,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.334"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/circle6"
@@ -198,7 +210,7 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintHorizontal_bias="0.668"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -210,11 +222,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.495" />
 
     <TextView
         android:id="@+id/circle8"
@@ -222,11 +234,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <TextView
         android:id="@+id/circle9"
@@ -234,11 +246,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <TextView
         android:id="@+id/circle10"
@@ -258,11 +270,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <TextView
         android:id="@+id/circle12"
@@ -270,11 +282,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <TextView
         android:id="@+id/circle13"
@@ -306,27 +318,11 @@
         android:layout_height="30dp"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
-
-    <Button
-        android:id="@+id/confirmButton"
-        android:layout_width="115dp"
-        android:layout_height="75dp"
-        android:backgroundTint="#AEEA00"
-        android:fontFamily="@font/permanent_marker"
-        android:text="Confirm"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <Button
         android:id="@+id/quitButton"
