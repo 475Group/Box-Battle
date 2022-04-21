@@ -3,28 +3,37 @@
     <PreferenceCategory app:title="General">
 
         <CheckBoxPreference
-            app:key="key_silent_mode"
             app:defaultValue="false"
-            app:title="Silent Mode"
-            app:summary="Mute all sounds from this app" />
+            app:key="key_silent_mode"
+            app:summary="Mute all sounds from this app"
+            app:title="Silent Mode" />
+
+
+        <!--
+        <SeekBarPreference
+            app:key="keyName"
+            app:title="Property Label"
+            app:summary="Summary."
+            app:max="5"
+            app:defaultValue="0" />
+            -->
 
     </PreferenceCategory>
 
 
     <PreferenceCategory app:title="@string/pref_header_about">
 
-    <Preference
-        app:summary="@string/app_version"
-        app:title="@string/title_version" />
+        <Preference
+            app:summary="@string/app_version"
+            app:title="@string/title_version" />
 
-    <Preference
-        app:key="@string/key_send_feedback"
-        app:summary="@string/summary_support"
-        app:title="@string/title_send_feedback" />
+        <EditTextPreference
+            app:key="@string/key_send_feedback"
+            app:summary="@string/summary_support"
+            app:title="@string/title_send_feedback"/>
 
 
     </PreferenceCategory>
-
 
 
 

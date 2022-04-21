@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class StartScreenActivity extends AppCompatActivity {
-     Button button;
+     Button startButton;
 
 
 
@@ -31,9 +31,9 @@ public class StartScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
 
 
-        button = findViewById(R.id.button);
+        startButton = findViewById(R.id.button);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.monplaisir);   //Play music on after start button
-        button.setOnClickListener(new View.OnClickListener(){
+        startButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 openSetUpScreenActivity();
