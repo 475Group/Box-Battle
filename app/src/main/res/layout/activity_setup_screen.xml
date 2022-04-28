@@ -4,19 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     >
 
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.234"
+        app:srcCompat="@drawable/pen_icon_foreground" />
 
     <Button
         android:id="@+id/_8x6"
         android:layout_width="67dp"
         android:layout_height="46dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
         android:text="8x6"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,7 +40,7 @@
         android:id="@+id/_5x4"
         android:layout_width="67dp"
         android:layout_height="46dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
         android:text="5x4"
         android:textAlignment="center"
@@ -44,7 +56,7 @@
         android:id="@+id/_3x3"
         android:layout_width="67dp"
         android:layout_height="46dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
         android:text="3x3"
         android:textAlignment="center"
@@ -60,7 +72,7 @@
         android:id="@+id/_3x2"
         android:layout_width="67dp"
         android:layout_height="46dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
         android:text="3x2"
         android:textAlignment="center"
@@ -76,7 +88,7 @@
         android:id="@+id/confirmButton"
         android:layout_width="130dp"
         android:layout_height="49dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#4F9CA59E"
         android:fontFamily="@font/permanent_marker"
         android:text="Play"
         android:textAlignment="center"
@@ -86,16 +98,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.951"
+        app:rippleColor="@color/green_app" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
         android:fontFamily="@font/permanent_marker"
-        android:text="@string/box_battle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#689F38"
+        android:text="BOX BATTLE"
+        android:textAlignment="center"
+        android:textColor="@color/green_app"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -104,34 +118,107 @@
         app:layout_constraintVertical_bias="0.058" />
 
     <EditText
-        android:id="@+id/inputTextP1"
-        android:layout_width="139dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:hint="Player 1"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
-    <EditText
         android:id="@+id/inputTextP2"
         android:layout_width="139dp"
         android:layout_height="49dp"
         android:ems="10"
+        android:fontFamily="@font/anton"
         android:hint="Player 2"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546" />
+        app:layout_constraintVertical_bias="0.532" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup4"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:dividerPadding="50dp"
+        android:gravity="center|right"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.634">
+
+        <RadioButton
+            android:id="@+id/RB1.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/cookie_monster"
+            android:button="@drawable/cookie_monster"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="cookie_monster" />
+
+        <RadioButton
+            android:id="@+id/RB2.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/amethyst_universe"
+            android:button="@drawable/amethyst_universe"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:checked="false"
+            android:contentDescription="amethyst_universe" />
+
+        <RadioButton
+            android:id="@+id/RB3.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/homer_simpson"
+            android:button="@drawable/homer_simpson"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="homer_simpson" />
+
+        <RadioButton
+            android:id="@+id/RB4.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/jerry"
+            android:button="@drawable/jerry"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="jerry" />
+
+        <RadioButton
+            android:id="@+id/RB5.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/kermit_the_frog"
+            android:button="@drawable/kermit_the_frog"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="kermit_the_frog" />
+
+        <RadioButton
+            android:id="@+id/RB6.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/spongebob_squarepants"
+            android:button="@drawable/spongebob_squarepants"
+            android:buttonTint="#00FFFFFF"
+            android:buttonTintMode="screen"
+            android:contentDescription="spongebob_squarepants" />
+
+
+    </RadioGroup>
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -143,7 +230,7 @@
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73">
+        app:layout_constraintVertical_bias="0.716">
 
         <RadioButton
             android:id="@+id/c1.2"
@@ -196,69 +283,6 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="247dp"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435">
-
-        <RadioButton
-            android:id="@+id/c1.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/red"
-            android:textColor="@color/red"
-            />
-
-        <RadioButton
-            android:id="@+id/c2.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/orange"
-            android:textColor="@color/orange" />
-
-        <RadioButton
-            android:id="@+id/c3.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/yellow"
-            android:textColor="@color/orange" />
-
-        <RadioButton
-            android:id="@+id/c4.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/green"
-            android:textColor="@color/green" />
-
-        <RadioButton
-            android:id="@+id/c5.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/blue"
-            android:textColor="@color/blue" />
-
-        <RadioButton
-            android:id="@+id/c6.1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:buttonTint="@color/purple"
-            android:textColor="@color/purple" />
-
-    </RadioGroup>
-
-    <RadioGroup
         android:id="@+id/radioGroup3"
         android:layout_width="wrap_content"
         android:layout_height="61dp"
@@ -268,10 +292,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343">
+        app:layout_constraintVertical_bias="0.317">
 
         <RadioButton
             android:id="@+id/RB1.1"
@@ -346,105 +370,108 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/radioGroup4"
-        android:layout_width="wrap_content"
-        android:layout_height="61dp"
-        android:layout_margin="10dp"
-        android:dividerPadding="50dp"
-        android:gravity="center|right"
+        android:id="@+id/radioGroup1"
+        android:layout_width="247dp"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653">
+        app:layout_constraintVertical_bias="0.406">
 
         <RadioButton
-            android:id="@+id/RB1.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/cookie_monster"
-            android:button="@drawable/cookie_monster"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:checked="false"
-            android:contentDescription="cookie_monster" />
+            android:id="@+id/c1.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/red"
+            android:textColor="@color/red" />
 
         <RadioButton
-            android:id="@+id/RB2.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/amethyst_universe"
-            android:button="@drawable/amethyst_universe"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:checked="false"
-            android:contentDescription="amethyst_universe" />
+            android:id="@+id/c2.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/orange"
+            android:textColor="@color/orange" />
 
         <RadioButton
-            android:id="@+id/RB3.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/homer_simpson"
-            android:button="@drawable/homer_simpson"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:contentDescription="homer_simpson" />
+            android:id="@+id/c3.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/yellow"
+            android:textColor="@color/orange" />
 
         <RadioButton
-            android:id="@+id/RB4.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/jerry"
-            android:button="@drawable/jerry"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:contentDescription="jerry" />
+            android:id="@+id/c4.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/green"
+            android:textColor="@color/green" />
 
         <RadioButton
-            android:id="@+id/RB5.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/kermit_the_frog"
-            android:button="@drawable/kermit_the_frog"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:contentDescription="kermit_the_frog" />
+            android:id="@+id/c5.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/blue"
+            android:textColor="@color/blue" />
 
         <RadioButton
-            android:id="@+id/RB6.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/spongebob_squarepants"
-            android:button="@drawable/spongebob_squarepants"
-            android:buttonTint="#00FFFFFF"
-            android:buttonTintMode="screen"
-            android:contentDescription="spongebob_squarepants" />
-
+            android:id="@+id/c6.1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/purple"
+            android:textColor="@color/purple" />
 
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/inputTextP1"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:fontFamily="@font/anton"
+        android:hint="Player 1"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="561dp"
-        android:layout_marginEnd="269dp"
-        android:layout_marginBottom="151dp"
+        android:fontFamily="@font/anton"
         android:text="Select Board Size:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531"
+        app:srcCompat="@drawable/pen_icon_foreground" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

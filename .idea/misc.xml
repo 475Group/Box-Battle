@@ -27,11 +27,19 @@
         <entry key="..\:/Users/Cyaira/Downloads/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="app/src/main/res/drawable/heart_icon_foreground.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/info_button_background.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/pen_icon_foreground.xml" value="0.313" />
         <entry key="app/src/main/res/drawable/settings_button_background.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/square.xml" value="0.1825" />
+        <entry key="app/src/main/res/drawable/triangle.xml" value="0.1825" />
         <entry key="app/src/main/res/layout/activity_game_page.xml" value="0.1005141943036722" />
+        <entry key="app/src/main/res/layout/activity_game_page_3x2.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_game_page_3x3.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_game_page_5x4.xml" value="0.17920684814453125" />
+        <entry key="app/src/main/res/layout/activity_info.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18861602783203124" />
         <entry key="app/src/main/res/layout/activity_setup_screen.xml" value="0.30098898343950786" />
-        <entry key="app/src/main/res/layout/activity_start_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_start_screen.xml" value="0.1444122314453125" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/heart_icon.xml" value="0.132" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/heart_icon_round.xml" value="0.132" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1835" />
@@ -40,7 +48,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

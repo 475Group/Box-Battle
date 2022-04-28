@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public final class Players extends AppCompatActivity {
-    private static String player1Name = "Player1", player2Name = "Player2";
+    private static String player1Name = "Player 1", player2Name = "Player 2";
     private static int p1Color = Color.parseColor("#B388FF"), p2Color = Color.parseColor("#FFD180");
     private static int p1Drawable = R.drawable.cookie_monster, p2Drawable =R.drawable.amethyst_universe;
     public static int avatar1 = 0, avatar2 = 1;
@@ -61,8 +61,8 @@ public final class Players extends AppCompatActivity {
     }
     public static void clear(){
         selectTurn();
-        player1Name = "Player1";
-        player2Name = "Player2";
+        player1Name = "Player 1";
+        player2Name = "Player 2";
         p1Drawable = R.drawable.cookie_monster;
         p2Drawable = R.drawable.amethyst_universe;
         player1Score = player2Score = 0;

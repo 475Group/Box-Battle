@@ -5,7 +5,7 @@
     android:id="@+id/GamePage5x4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
 
@@ -13,7 +13,6 @@
         android:id="@+id/dot19"
         android:layout_width="20dp"
         android:layout_height="20dp"
-
         android:layout_marginStart="23dp"
         android:layout_marginTop="282dp"
         android:layout_marginEnd="368dp"
@@ -157,30 +156,29 @@
         android:id="@+id/quitButton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:backgroundTint="#CF1010"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
-        android:text="@string/quit"
-        app:backgroundTint="@color/white"
+        android:text="Quit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <Button
         android:id="@+id/restartButton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:backgroundTint="#00B8D4"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
-        android:text="@string/restart"
+        android:text="Restart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <ImageView
         android:id="@+id/settingsIcon"

@@ -4,28 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".InfoActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/permanent_marker"
-        android:text="@string/box_battle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#689F38"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="130dp"
         android:layout_height="49dp"
-        android:backgroundTint="#AEEA00"
+        android:backgroundTint="#474242"
         android:fontFamily="@font/permanent_marker"
         android:text="Back"
         android:textAlignment="center"
@@ -41,11 +27,15 @@
         android:id="@+id/textView3"
         android:layout_width="276dp"
         android:layout_height="372dp"
+        android:fontFamily="@font/anton"
         android:text="1. Click on the space between dots to create a line \n\n2. If your line creates a box, the enclosed space will change to be your color, and you score a point \n\n3. The player with the most filled boxes wins"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/backButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
@@ -53,12 +43,14 @@
         android:layout_height="65dp"
         android:fontFamily="@font/permanent_marker"
         android:text="Rules"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:textColor="@color/green_app"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

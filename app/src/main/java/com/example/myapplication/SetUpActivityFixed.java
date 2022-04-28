@@ -7,6 +7,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -28,6 +30,16 @@ public class SetUpActivityFixed extends AppCompatActivity {
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Remove title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //Hides action bar
+        if(getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_screen);
         int[] colors = {ContextCompat.getColor(this,R.color.red),
@@ -36,20 +48,20 @@ public class SetUpActivityFixed extends AppCompatActivity {
                 ContextCompat.getColor(this,R.color.green),
                 ContextCompat.getColor(this,R.color.blue),
                 ContextCompat.getColor(this,R.color.purple)};
-       p1Name = findViewById(R.id.inputTextP1);
-       p2Name = findViewById(R.id.inputTextP2);
-       p1Name.setHint(Players.getPlayer1Name());
-       p2Name.setHint(Players.getPlayer2Name());
+        p1Name = findViewById(R.id.inputTextP1);
+        p2Name = findViewById(R.id.inputTextP2);
+        p1Name.setHint(Players.getPlayer1Name());
+        p2Name.setHint(Players.getPlayer2Name());
 
-       p1Avatars = new ArrayList<>();
-       p2Avatars = new ArrayList<>();
-       p1Colors = new ArrayList<>();
-       p2Colors = new ArrayList<>();
-       buttons = new ArrayList<>();
+        p1Avatars = new ArrayList<>();
+        p2Avatars = new ArrayList<>();
+        p1Colors = new ArrayList<>();
+        p2Colors = new ArrayList<>();
+        buttons = new ArrayList<>();
 
-       Resources r = getResources();
-       String name = getPackageName();
-       for (int i = 1; i <=6 ; i++) {
+        Resources r = getResources();
+        String name = getPackageName();
+        for (int i = 1; i <=6 ; i++) {
             String p1Avatar = "RB"+i+".1";
             String p2Avatar = "RB"+i+".2";
             String p1Color = "c"+i+".1";
@@ -60,8 +72,8 @@ public class SetUpActivityFixed extends AppCompatActivity {
             p2Colors.add(findViewById(r.getIdentifier(p2Color, "id",name)));
         }
         int originalColorForAvatar = p1Avatars.get(0).getSolidColor();
-       prevAvatarp1 = p1Avatars.get(Players.avatar1);
-       p1Avatars.get(Players.avatar1).setBackgroundColor(Color.BLUE);
+        prevAvatarp1 = p1Avatars.get(Players.avatar1);
+        p1Avatars.get(Players.avatar1).setBackgroundColor(Color.DKGRAY);
         for (int i = 0; i < p1Avatars.size(); i++) {
             int finalI = i;
             p1Avatars.get(i).setOnClickListener(new View.OnClickListener(){
@@ -70,14 +82,14 @@ public class SetUpActivityFixed extends AppCompatActivity {
                 public void onClick(View view) {
                     if (prevAvatarp1 != null)
                         prevAvatarp1.setBackgroundColor(originalColorForAvatar);
-                    view.setBackgroundColor(Color.BLUE);
+                    view.setBackgroundColor(Color.DKGRAY);
                     prevAvatarp1 = view;
                     Players.setP1Drawable(finalI);
                 }
             });
         }
         prevAvatarp2 = p2Avatars.get(Players.avatar2);
-        p2Avatars.get(Players.avatar2).setBackgroundColor(Color.BLUE);
+        p2Avatars.get(Players.avatar2).setBackgroundColor(Color.DKGRAY);
         for (int i = 0; i < p2Avatars.size(); i++) {
             int finalI = i;
             p2Avatars.get(i).setOnClickListener(new View.OnClickListener(){
@@ -86,7 +98,7 @@ public class SetUpActivityFixed extends AppCompatActivity {
                 public void onClick(View view) {
                     if (prevAvatarp2 != null)
                         prevAvatarp2.setBackgroundColor(originalColorForAvatar);
-                    view.setBackgroundColor(Color.BLUE);
+                    view.setBackgroundColor(Color.DKGRAY);
                     prevAvatarp2 = view;
                     Players.setP2Drawable(finalI);
                 }
@@ -126,14 +138,14 @@ public class SetUpActivityFixed extends AppCompatActivity {
         buttons.add(_8x6);
 
         prevButton = buttons.get(Board.layoutNumber);
-        prevButton.setBackgroundColor(Color.BLUE);
+        prevButton.setBackgroundColor(Color.parseColor("#77BB3F"));
         int originalColor = _3x2.getSolidColor();
         _3x2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (prevButton != null)
                     prevButton.setBackgroundColor(originalColor);
-                view.setBackgroundColor(Color.BLUE);
+                view.setBackgroundColor(Color.parseColor("#77BB3F"));
                 prevButton = view;
                 Board.setSize(3,2);
 
@@ -144,7 +156,7 @@ public class SetUpActivityFixed extends AppCompatActivity {
             public void onClick(View view) {
                 if (prevButton != null)
                     prevButton.setBackgroundColor(originalColor);
-                view.setBackgroundColor(Color.BLUE);
+                view.setBackgroundColor(Color.parseColor("#77BB3F"));
                 prevButton = view;
                 Board.setSize(5,4);
             }
@@ -154,7 +166,7 @@ public class SetUpActivityFixed extends AppCompatActivity {
             public void onClick(View view) {
                 if (prevButton != null)
                     prevButton.setBackgroundColor(originalColor);
-                view.setBackgroundColor(Color.BLUE);
+                view.setBackgroundColor(Color.parseColor("#77BB3F"));
                 prevButton = view;
                 Board.setSize(8,6);
             }
@@ -164,7 +176,7 @@ public class SetUpActivityFixed extends AppCompatActivity {
             public void onClick(View view) {
                 if (prevButton != null)
                     prevButton.setBackgroundColor(originalColor);
-                view.setBackgroundColor(Color.BLUE);
+                view.setBackgroundColor(Color.parseColor("#77BB3F"));
                 prevButton = view;
                 Board.setSize(3,3);
             }

@@ -5,36 +5,40 @@
     android:id="@+id/TextView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".StartScreenActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="66dp"
         android:fontFamily="@font/permanent_marker"
-        android:text="@string/box_battle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#689F38"
+        android:text="BOX BATTLE"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="58sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="132dp"
+        android:layout_height="65dp"
+        android:backgroundTint="#9CA59E"
+        android:fontFamily="@font/permanent_marker"
         android:text="@string/start"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:iconTint="#474242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.415"
-        app:rippleColor="#020202" />
+        app:layout_constraintVertical_bias="0.905"
+        app:rippleColor="@color/green_app" />
 </androidx.constraintlayout.widget.ConstraintLayout>
