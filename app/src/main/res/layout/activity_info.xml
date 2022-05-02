@@ -27,7 +27,7 @@
         android:id="@+id/textView3"
         android:layout_width="276dp"
         android:layout_height="372dp"
-        android:fontFamily="@font/anton"
+        android:fontFamily="@font/permanent_marker"
         android:text="1. Click on the space between dots to create a line \n\n2. If your line creates a box, the enclosed space will change to be your color, and you score a point \n\n3. The player with the most filled boxes wins"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"

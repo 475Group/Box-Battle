@@ -63,9 +63,9 @@ public final class Board {
                 layout = R.layout.activity_game_page_5x4;
                 layoutNumber = 2;
                 break;
-            case "8x6":
-                length = 8;
-                height = 6;
+            case "5x5":
+                length = 5;
+                height = 5;
                 layout = R.layout.activity_game_page_5x5;
                 layoutNumber = 3;
                 break;
@@ -75,6 +75,6 @@ public final class Board {
                 layout = R.layout.activity_game_page_3x3;
                 layoutNumber = 1;
                 break;
-            }
+        }
     }
 }

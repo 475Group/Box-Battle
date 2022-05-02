@@ -21,62 +21,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final int PADDING = 130;
     //text palyer name and score shown on page
     TextView player1Score, player2Score, player1Text, player2Text, player1Turn, player2Turn;
-    //String player1Name, player2Name;
-    //int player1Color, player2Color;
     ImageView avatarP1, avatarP2;
-    //String player1Avatar, player2Avatar;
-    //int imageResource1, imageResource2;
-    //initalize scores to 0
-    //int player1ScoreValue = 0, player2ScoreValue = 0;
-    //no line selected yet so previous line is null
-    //View currLine = null;
-    //first player starts game
-    //int turn = 0;
-    //stores all lines selected in game
-    //ArrayList<View> lines = new ArrayList<>();
-    //stores all possible wins in game
-    //ArrayList<TextView> wins = new ArrayList<>();
-    /*public void setUpPlayerInfo(){
-        if (!(player1Name.equals(""))) {
-            player1Text.setText(player1Name);
-
-        }
-        player1Text.setTextColor(player1Color);
-        player1Score.setTextColor(player1Color);
-
-        if (!(player2Name.equals(""))) {
-            player2Text.setText(player2Name);
-        }
-        player2Text.setTextColor(player2Color);
-        player2Score.setTextColor(player2Color);
-
-        System.out.println(player1Avatar);
-             imageResource1 = getResources().getIdentifier(player1Avatar, null, getPackageName());
-            avatarP1 = findViewById(R.id.avatarP1);
-            Drawable res1 = getResources().getDrawable(imageResource1);
-            avatarP1.setImageDrawable(res1);
-
-
-
-             imageResource2 = getResources().getIdentifier(player2Avatar, null, getPackageName());
-            avatarP2 = findViewById(R.id.avatarP2);
-            Drawable res2 = getResources().getDrawable(imageResource2);
-            avatarP2.setImageDrawable(res2);
-
-
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Remove title bar
+        /*//Remove title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Hides action bar
         if(getSupportActionBar() != null){
             getSupportActionBar().hide();
-        }
+        }*/
 
 
         setContentView(Board.getLayout());
@@ -94,14 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player2Text = findViewById(R.id.player2Text);
         player2Text.setText(Players.getPlayer2Name());
         player2Text.setTextColor(Players.getPlayer2Color());
-        /*player1Name = getIntent().getExtras().getString("P1");
-        player1Color = getIntent().getIntExtra("colorP1", -16777216);
-        player2Name = getIntent().getExtras().getString("P2");
-        player2Color = getIntent().getIntExtra("colorP2", -16777216);
-        player1Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP1");
-        player2Avatar = "@drawable/" + getIntent().getExtras().getString("avatarP2");
-        avatarP1 = findViewById(R.id.avatarP1);
-        avatarP2 = findViewById(R.id.avatarP2);*/
+
         player1Score = findViewById(R.id.player1Score);
         player1Score.setTextColor(Players.getPlayer1Color());
 
@@ -111,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Turn = findViewById(R.id.Player1Turn);
         player2Turn = findViewById(R.id.Player2Turn);
 
-        //setUpPlayerInfo();
         ImageView settingsButton = findViewById(R.id.settingsIcon);
         ImageView infoButton = findViewById(R.id.infoIcon);
 
@@ -211,7 +159,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             (dialog, which) -> openStartScreen());
                 }
                 alertDialog.show();
-                //previousLine = null;
             }
             //otherwise switch players
             else {
@@ -226,8 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     Players.setTurn();
                 }
-                //set  prev line to null to show that no line has been selected
-                //previousLine = null;
+
             }
         }
     //}

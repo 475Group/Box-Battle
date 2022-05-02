@@ -19,14 +19,14 @@ public class StartScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-         //Remove title bar
+         /*//Remove title bar
          requestWindowFeature(Window.FEATURE_NO_TITLE);
          this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
          //Hides action bar
          if(getSupportActionBar() != null){
              getSupportActionBar().hide();
-         }
+         }*/
 
         setContentView(R.layout.activity_start_screen);
 
